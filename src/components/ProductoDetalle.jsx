@@ -10,10 +10,10 @@ const productos = {
       { src: '/images/dispositivo-naranja.png', label: 'C', desc: 'DCW (Ventana Control)' }
     ],
     pasos: [
-      { texto: 'Abrir dispositivo y colocar jeringa.', img: '/images/dispositivo-naranja.png' },
-      { texto: 'Cargar el dispositivo y cerrar.', img: '/images/dispositivo-naranja.png' },
-      { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/dispositivo-naranja.png' },
-      { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/dispositivo-naranja.png' }
+      { texto: 'Abrir dispositivo y colocar jeringa.', img: '/images/paso1-naranja.jpg' },
+      { texto: 'Cargar el dispositivo y cerrar.', img: '/images/paso2-naranja.jpg' },
+      { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/paso3-naranja.jpg' },
+      { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/paso4-naranja.jpg' }
     ],
     folleto: '/pdfs/autoinyector-1ml.pdf',
     detalles: [
@@ -33,9 +33,9 @@ const productos = {
       { src: '/images/dispositivo-verde.png', label: 'C', desc: 'Vista C' }
     ],
     pasos: [
-      { texto: 'Abrir dispositivo y colocar ampolla.', img: '/images/dispositivo-verde.png' },
-      { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/dispositivo-verde.png' },
-      { texto: 'Regular la dosis, destapar la aguja y aplicar.', img: '/images/dispositivo-verde.png' }
+      { texto: 'Abrir dispositivo y colocar ampolla.', img: '/images/paso1-verde.jpg' },
+      { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/paso2-verde.jpg' },
+      { texto: 'Regular la dosis, destapar la aguja y aplicar.' }
     ],
     folleto: '/pdfs/pen-1-5-3ml.pdf',
     detalles: [
@@ -116,9 +116,12 @@ const ProductoDetalle = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-700 mb-2">{paso.texto}</p>
-                  <div className="bg-gray-100 rounded p-2 h-12 flex items-center">
-                    <img src={paso.img} alt={`Paso ${idx + 1}`} className="h-full object-contain" />
-                  </div>
+                  {/* Solo mostrar imagen si existe */}
+                  {paso.img && (
+                    <div className="rounded p-2 h-12 flex items-center">
+                      <img src={paso.img} alt={`Paso ${idx + 1}`} className="h-10 w-auto object-contain" />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
