@@ -1,6 +1,25 @@
 import React from 'react'
 import logoResguar from '/images/logoresguar.svg'
 
+export const contactoData = {
+  direccion: 'Av. Córdoba 632, 9° "I"\nC.A. de Buenos Aires, Argentina',
+  telefono: '(+5411) 44695225',
+  mobile: '(+5411) 44097213',
+  email: 'sales@dis-positivo.com.ar',
+  directos: [
+    {
+      nombre: 'Carlos Andrea Fechino',
+      mobile: '(+5411) 44097213',
+      email: 'cafechino@dis-positivo.com.ar'
+    },
+    {
+      nombre: 'Claudio Fabian Culini',
+      mobile: '(+5411) 51846467',
+      email: 'cfculini@dis-positivo.com.ar'
+    }
+  ]
+}
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
@@ -8,7 +27,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-2xl font-bionical font-bold">dis+</div>
+              <div className="text-2xl font-bionical ">dis+</div>
               <div className="text-sm uppercase tracking-wider">Medical Devices</div>
             </div>
             <p className="opacity-90 text-sm leading-relaxed">
@@ -20,9 +39,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contacto</h4>
             <div className="space-y-2 text-sm opacity-90">
-              <div>Tel: (+5411) 44.69.52.25</div>
-              <div>Mobile: (+54 9 11) 44.09.72.13</div>
-              <div>Email: sales@dis-positivo.com.ar</div>
+              <div>Tel: {contactoData.telefono}</div>
+              <div>Mobile: {contactoData.mobile}</div>
+              <div>Email: {contactoData.email}</div>
             </div>
           </div>
 

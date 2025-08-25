@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
                       <a href="/">
           <div className="flex items-center space-x-2">
-              <div className="text-2xl  font-bold font-bionical">dis+</div>
+              <div className="text-2xl   font-bionical">dis+</div>
               <div className="text-sm font-sans uppercase tracking-wider">Medical Devices</div>
             </div>
           </a>

@@ -1,5 +1,25 @@
 import React from 'react'
 
+// Contact data centralizado
+export const contactoData = {
+  direccion: 'Av. Córdoba 632, 9° "I"\nC.A. de Buenos Aires, Argentina',
+  telefono: '(+5411) 44695225',
+  mobile: '(+5411) 44097213',
+  email: 'sales@dis-positivo.com.ar',
+  directos: [
+    {
+      nombre: 'Carlos Andrea Fechino',
+      mobile: '(+5411) 44097213',
+      email: 'cafechino@dis-positivo.com.ar'
+    },
+    {
+      nombre: 'Claudio Fabian Culini',
+      mobile: '(+5411) 51846467',
+      email: 'cfculini@dis-positivo.com.ar'
+    }
+  ]
+}
+
 const ContactoSection = () => {
   return (
     <section id="contacto" className="py-12 scroll-mt-6">
@@ -10,51 +30,49 @@ const ContactoSection = () => {
             Estamos aquí para ayudarte con tus necesidades de dispositivos médicos
           </p>
         </div>
-              <h3 className="text-2xl font-serif font-semibold mb-6">Información de Contacto</h3>
+        <h3 className="text-2xl font-serif font-semibold mb-6">Información de Contacto</h3>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div className='grid grid-cols-2 '>
-                <div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  {/* MapPin icon */}
-                  <svg className="h-5 w-5 text-primary mt-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M12 21s-6-5.686-6-10a6 6 0 1 1 12 0c0 4.314-6 10-6 10z" />
-                    <circle cx="12" cy="11" r="2" />
-                  </svg>
-                  <div>
-                    <div className="font-semibold">Dirección</div>
-                    <div className="text-muted-foreground">
-                      Av. Córdoba 632, 9° "I"
-                      <br />
-                      C.A. de Buenos Aires, Argentina
+              <div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    {/* MapPin icon */}
+                    <svg className="h-5 w-5 text-primary mt-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M12 21s-6-5.686-6-10a6 6 0 1 1 12 0c0 4.314-6 10-6 10z" />
+                      <circle cx="12" cy="11" r="2" />
+                    </svg>
+                    <div>
+                      <div className="font-semibold">Dirección</div>
+                      <div className="text-muted-foreground" style={{ whiteSpace: 'pre-line' }}>
+                        {contactoData.direccion}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-3">
-                  {/* Phone icon */}
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.37 1.6.72 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.74.35 1.53.59 2.34.72A2 2 0 0 1 21 16.91z" />
-                  </svg>
-                  <div>
-                    <div className="font-semibold">Teléfono</div>
-                    <div className="text-muted-foreground">(+5411) 44695225</div>
+                  <div className="flex items-center gap-3">
+                    {/* Phone icon */}
+                    <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.37 1.6.72 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.74.35 1.53.59 2.34.72A2 2 0 0 1 21 16.91z" />
+                    </svg>
+                    <div>
+                      <div className="font-semibold">Teléfono</div>
+                      <div className="text-muted-foreground">{contactoData.telefono}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  {/* Mobile icon */}
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <rect x="7" y="2" width="10" height="20" rx="2" />
-                    <circle cx="12" cy="18" r="1" />
-                  </svg>
-                  <div>
-                    <div className="font-semibold">Mobile</div>
-                    <div className="text-muted-foreground">(+5411) 44097213</div>
+                  <div className="flex items-center gap-3">
+                    {/* Mobile icon */}
+                    <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <rect x="7" y="2" width="10" height="20" rx="2" />
+                      <circle cx="12" cy="18" r="1" />
+                    </svg>
+                    <div>
+                      <div className="font-semibold">Mobile</div>
+                      <div className="text-muted-foreground">{contactoData.mobile}</div>
+                    </div>
                   </div>
-                </div>
-                </div>
+
 
                 <div className="flex items-center gap-3">
                   {/* Mail icon */}
@@ -64,29 +82,25 @@ const ContactoSection = () => {
                   </svg>
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-muted-foreground">sales@dis-positivo.com.ar</div>
+                    <div className="text-muted-foreground">{contactoData.email}</div>
                   </div>
                 </div>
+                                </div>
               </div>
-<div>
-              <h4 className="font-semibold mb-4">Contactos Directos</h4>
-              <div className="space-y-3 text-sm">
-                <div>
-                  <div className="font-medium">Carlos Andrea Fechino</div>
-                  <div className="text-muted-foreground">Mobile: (+5411) 44097213</div>
-                  <div className="text-muted-foreground">cafechino@dis-positivo.com.ar</div>
-                </div>
-                <div>
-                  <div className="font-medium">Claudio Fabian Culini</div>
-                  <div className="text-muted-foreground">Mobile: (+5411) 51846467</div>
-                  <div className="text-muted-foreground">cfculini@dis-positivo.com.ar</div>
+              <div>
+                <h4 className="font-semibold mb-4">Contactos Directos</h4>
+                <div className="space-y-3 text-sm">
+                  {contactoData.directos.map((contact, idx) => (
+                    <div key={idx}>
+                      <div className="font-medium">{contact.nombre}</div>
+                      <div className="text-muted-foreground">Mobile: {contact.mobile}</div>
+                      <div className="text-muted-foreground">{contact.email}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            </div>
-
-            
             <div className="mt-8 rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.87952675156!2d-58.375828!3d-34.598601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacbb5d70bdb%3A0x9c01350f11eafdc2!2sAv.%20C%C3%B3rdoba%20632%2C%20C1054AAS%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1756134319806!5m2!1ses-419!2sus"
