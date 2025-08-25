@@ -2,7 +2,7 @@ import React from 'react'
 
 const NosotrosSection = () => {
   return (
-    <section id="nosotros" className="py-16">
+    <section id="nosotros" className="py-8">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
@@ -36,7 +36,8 @@ const NosotrosSection = () => {
             </div>
           </div>
 
-          <div className="space-y-8">
+          {/* Segunda columna con flex y justify-between */}
+          <div className="flex flex-col h-full lg:min-h-[500px] space-y-8 lg:pt-26 lg:pb-6">
             <div className="border-l-4 border-l-primary bg-white rounded-lg shadow p-6">
               <div className="flex items-center gap-2 font-serif text-lg font-bold mb-2 text-primary">
                 {/* Award icon */}
@@ -52,19 +53,19 @@ const NosotrosSection = () => {
                 productos para mejorar la salud y el bienestar de toda la gente.
               </p>
             </div>
-
+            <div className="lg:flex-grow" />
             <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-6 bg-muted/50 rounded-lg">
+              <div className="text-center p-0 rounded-lg flex flex-col items-center">
                 {/* Shield icon */}
-                <svg className="h-8 w-8 text-primary mx-auto mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg className="h-8 w-8 text-primary mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M12 2l7 4v6c0 5-3.5 9.74-7 10-3.5-.26-7-5-7-10V6z" />
                 </svg>
                 <div className="font-semibold">Calidad</div>
                 <div className="text-sm text-muted-foreground">Certificada</div>
               </div>
-              <div className="text-center p-6 bg-muted/50 rounded-lg">
+              <div className="text-center p-0 rounded-lg flex flex-col items-center">
                 {/* Zap icon */}
-                <svg className="h-8 w-8 text-primary mx-auto mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg className="h-8 w-8 text-primary mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
                 <div className="font-semibold">Innovación</div>

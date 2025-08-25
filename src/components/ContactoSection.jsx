@@ -2,9 +2,9 @@ import React from 'react'
 
 const ContactoSection = () => {
   return (
-    <section id="contacto" className="py-20">
+    <section id="contacto" className="py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">Contacto</h2>
           <p className="text-xl text-muted-foreground">
             Estamos aquí para ayudarte con tus necesidades de dispositivos médicos
