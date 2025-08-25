@@ -8,10 +8,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
+                      <a href="/">
           <div className="flex items-center space-x-2">
-            <div className="text-2xl  font-bold font-bionical">dis+</div>
-            <div className="text-sm font-sans uppercase tracking-wider">Medical Devices</div>
-          </div>
+              <div className="text-2xl  font-bold font-bionical">dis+</div>
+              <div className="text-sm font-sans uppercase tracking-wider">Medical Devices</div>
+            </div>
+          </a>
           <nav className="hidden md:flex items-center space-x-8 ">
             <a href="#productos" className="hover:text-accent transition-colors text-white">
               Productos

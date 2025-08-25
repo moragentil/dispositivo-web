@@ -82,10 +82,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Messina";
+  src: url("/src/assets/fonts/Messina.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 
 @theme inline {
   /* Updated font configuration for Space Grotesk and DM Sans */
   --font-bionical: "Bionical", sans-serif;
+    --font-messina: "Messina", sans-serif;
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-space-grotesk);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -160,4 +167,8 @@
     @apply bg-primary-foreground text-primary;
   }
   /* Add more custom styles as needed */
+}
+
+html {
+  scroll-behavior: smooth;
 }

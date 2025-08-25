@@ -8,7 +8,7 @@ const NosotrosSection = () => {
   }
 
   return (
-    <section id="nosotros" className="py-8">
+    <section id="nosotros" className="py-8 scroll-mt-12">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Sección Historia */}

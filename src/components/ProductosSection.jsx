@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ProductosSection = () => {
   return (
-    <section id="productos" className="py-12 bg-muted/30">
+    <section id="productos" className="py-12 bg-muted/30 scroll-mt-6">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">Nuestros Productos</h2>

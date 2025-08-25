@@ -1,4 +1,5 @@
 import React from 'react'
+import logoResguar from '/images/logoresguar.svg'
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-2xl font-serif font-bold">dis+</div>
+              <div className="text-2xl font-bionical font-bold">dis+</div>
               <div className="text-sm uppercase tracking-wider">Medical Devices</div>
             </div>
             <p className="opacity-90 text-sm leading-relaxed">
@@ -67,9 +68,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm opacity-75">
-          <p>&copy; 2024 Dis+ Medical Devices. Todos los derechos reservados.</p>
+        <div className="flex flex-col sm:flex-row w-full border-t border-gray-300/50 mt-8 sm:mt-12 pt-6 sm:pt-9 text-center text-slate-200 text-xs sm:text-sm justify-between items-center gap-4 sm:gap-0">
+          <a href="https://www.resguarit.com.ar" target="_blank" rel="noopener noreferrer">
+            <p className="flex items-center justify-center gap-2 hover:underline">
+            <img
+              src={logoResguar}
+              alt="Logo Resguar IT"
+              className="h-5 w-5 inline-block mr-1"
+            />
+            Desarrollado por <span className="font-messina">Resguar IT</span>
+          </p>
+          </a>
+          <p>&copy; {new Date().getFullYear()} <span className='font-bionical'>dis+ </span> Medical Devices. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
