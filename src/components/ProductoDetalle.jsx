@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import {ArrowLeft} from 'lucide-react'
 
 const productos = {
   'autoinyector-1ml': {
@@ -15,7 +16,7 @@ const productos = {
       { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/paso3-naranja.jpg' },
       { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/paso4-naranja.jpg' }
     ],
-    folleto: '/pdfs/autoinyector-1ml.pdf',
+    folleto: '/archivos/Autoinyector-esp.pdf',
     detalles: [
       'Para monodosis con jeringas pre-llenadas de 1 ml listas para usar con la dosis exacta.',
       'Fácil transporte.',
@@ -37,7 +38,7 @@ const productos = {
       { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/paso2-verde.jpg' },
       { texto: 'Regular la dosis, destapar la aguja y aplicar.' }
     ],
-    folleto: '/pdfs/pen-1-5-3ml.pdf',
+    folleto: '/archivos/Pen-esp.pdf',
     detalles: [
       'Pestaña antirrolido.',
       'Sistema de reseteo de dosis.',
@@ -79,6 +80,9 @@ const ProductoDetalle = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6 ">
+      <div className="mb-8">
+        <a href="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> Volver</a>
+      </div>
       {/* Header */}
       <div className="mb-4">
         <h1 className="text-3xl font-bold text-primary mb-2">{producto.nombre}</h1>
@@ -148,15 +152,13 @@ const ProductoDetalle = () => {
           href={producto.folleto}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-semibold"
+          className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg flex items-center gap-2 font-medium"
         >
           <IconDownload />
           Descargar folleto
         </a>
       </div>
-      <div className="mt-8">
-        <a href="/#productos" className="text-primary font-semibold hover:underline">← Volver a productos</a>
-      </div>
+
     </div>
   )
 }

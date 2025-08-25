@@ -1,7 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ProductosSection = () => {
+  const navigate = useNavigate()
+
+  // Función para navegar y hacer scroll arriba
+  const handleDetalle = (url) => {
+    navigate(url)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <section id="productos" className="py-12 bg-muted/30 scroll-mt-6">
       <div className="container mx-auto px-4">
@@ -14,7 +22,7 @@ const ProductosSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <Link to="/producto/autoinyector-1ml" className="group hover:shadow-xl transition-all duration-300 rounded-lg bg-white block">
+          <div className="group hover:shadow-xl transition-all duration-300 shadow-lg rounded-lg bg-white block">
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mb-3 flex items-center justify-center h-40">
               <img src="/images/dispositivo-naranja.png" alt="Autoinyector 1ml" className="w-fit h-auto object-contain" />
             </div>
@@ -34,14 +42,15 @@ const ProductosSection = () => {
                 <button
                   className="w-full py-1 px-3 border border-primary rounded group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
                   type="button"
+                  onClick={() => handleDetalle('/producto/autoinyector-1ml')}
                 >
                   Ver Detalle
                 </button>
               </div>
             </div>
-          </Link>
+          </div>
 
-          <Link to="/producto/pen-1-5-3ml" className="group hover:shadow-xl transition-all duration-300 rounded-lg bg-white block">
+          <div className="group hover:shadow-xl transition-all duration-300 rounded-lg shadow-lg bg-white block">
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mb-3 flex items-center justify-center h-40">
               <img src="/images/dispositivo-verde.png" alt="Pen 1,5/3ml" className="w-fit h-auto object-contain" />
             </div>
@@ -61,12 +70,13 @@ const ProductosSection = () => {
                 <button
                   className="w-full py-1 px-3 border border-primary rounded group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
                   type="button"
+                  onClick={() => handleDetalle('/producto/pen-1-5-3ml')}
                 >
                   Ver Detalle
                 </button>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     </section>
