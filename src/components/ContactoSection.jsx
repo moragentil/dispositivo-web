@@ -10,11 +10,12 @@ const ContactoSection = () => {
             Estamos aquí para ayudarte con tus necesidades de dispositivos médicos
           </p>
         </div>
+              <h3 className="text-2xl font-serif font-semibold mb-6">Información de Contacto</h3>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-serif font-semibold mb-6">Información de Contacto</h3>
+            <div className='grid grid-cols-2 '>
+                <div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   {/* MapPin icon */}
@@ -39,8 +40,20 @@ const ContactoSection = () => {
                   </svg>
                   <div>
                     <div className="font-semibold">Teléfono</div>
-                    <div className="text-muted-foreground">(+5411) 44.69.52.25</div>
+                    <div className="text-muted-foreground">(+5411) 44695225</div>
                   </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  {/* Mobile icon */}
+                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <rect x="7" y="2" width="10" height="20" rx="2" />
+                    <circle cx="12" cy="18" r="1" />
+                  </svg>
+                  <div>
+                    <div className="font-semibold">Mobile</div>
+                    <div className="text-muted-foreground">(+5411) 44097213</div>
+                  </div>
+                </div>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -55,22 +68,36 @@ const ContactoSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div>
+<div>
               <h4 className="font-semibold mb-4">Contactos Directos</h4>
               <div className="space-y-3 text-sm">
                 <div>
                   <div className="font-medium">Carlos Andrea Fechino</div>
-                  <div className="text-muted-foreground">Mobile: (+5411) 44.09.72.13</div>
+                  <div className="text-muted-foreground">Mobile: (+5411) 44097213</div>
                   <div className="text-muted-foreground">cafechino@dis-positivo.com.ar</div>
                 </div>
                 <div>
                   <div className="font-medium">Claudio Fabian Culini</div>
-                  <div className="text-muted-foreground">Mobile: (+5411) 51.84.64.67</div>
-                  <div className="text-muted-foreground">cculini@dis-positivo.com.ar</div>
+                  <div className="text-muted-foreground">Mobile: (+5411) 51846467</div>
+                  <div className="text-muted-foreground">cfculini@dis-positivo.com.ar</div>
                 </div>
               </div>
+            </div>
+
+            </div>
+
+            
+            <div className="mt-8 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.87952675156!2d-58.375828!3d-34.598601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacbb5d70bdb%3A0x9c01350f11eafdc2!2sAv.%20C%C3%B3rdoba%20632%2C%20C1054AAS%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1756134319806!5m2!1ses-419!2sus"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación Dis+"
+              ></iframe>
             </div>
           </div>
 

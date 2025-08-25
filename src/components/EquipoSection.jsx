@@ -29,15 +29,7 @@ const EquipoSection = () => {
                     <li>• Impacto en la salud global</li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Buscamos:</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Ingenieros biomédicos</li>
-                    <li>• Diseñadores industriales</li>
-                    <li>• Especialistas en calidad</li>
-                    <li>• Profesionales comerciales</li>
-                  </ul>
-                </div>
+
               </div>
 
               <div className="bg-accent/10 p-4 rounded-lg">
