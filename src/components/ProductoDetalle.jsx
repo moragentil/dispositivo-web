@@ -80,22 +80,24 @@ const ProductoDetalle = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 ">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-4">
         <h1 className="text-3xl font-bold text-primary mb-2">{producto.nombre}</h1>
       </div>
 
       {/* Main Product Views */}
-      <div className="bg-white rounded-lg border-2 border-primary/20 p-6 mb-8">
-        <div className="grid grid-cols-3 gap-8">
-          {producto.imagenes.map((img, idx) => (
-            <div className="text-center" key={idx}>
-              <div className="bg-gray-100 rounded-lg p-4 mb-4 h-48 flex items-center justify-center">
-                <img src={img.src} alt={img.desc} className="max-h-full object-contain" />
-              </div>
-              <div className="text-primary font-semibold text-lg">{img.label}</div>
-              <div className="text-sm text-gray-600 mt-1">{img.desc}</div>
-            </div>
-          ))}
+      <div className="bg-white rounded-lg   mb-8">
+        <div className="flex justify-center">
+          <div className=" rounded-lg  h-80 flex items-center justify-center">
+            <img
+              src={
+                productoId === 'autoinyector-1ml'
+                  ? '/images/completo-naranja.png'
+                  : '/images/completo-verde.png'
+              }
+              alt={producto.nombre}
+              className="max-h-full object-contain"
+            />
+          </div>
         </div>
       </div>
 
