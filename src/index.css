@@ -75,8 +75,17 @@
   --sidebar-ring: oklch(0.62 0.25 41);
 }
 
+@font-face {
+  font-family: "Bionical";
+  src: url("/src/assets/fonts/Bionical.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 @theme inline {
   /* Updated font configuration for Space Grotesk and DM Sans */
+  --font-bionical: "Bionical", sans-serif;
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-space-grotesk);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

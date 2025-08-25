@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="text-2xl font-serif font-bold">dis+</div>
+            <div className="text-2xl  font-bold font-bionical">dis+</div>
             <div className="text-sm font-sans uppercase tracking-wider">Medical Devices</div>
           </div>
           <nav className="hidden md:flex items-center space-x-8 ">
