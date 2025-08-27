@@ -44,7 +44,7 @@ const textos = {
             {textos[idioma].descripcion}
           </p>
 
-          <div className="bg-white rounded-lg shadow text-left p-6 sm:p-8">
+          <div className="bg-white  shadow text-left p-6 sm:p-8">
             <div className="mb-6">
               <div className="font-serif text-xl font-bold mb-2">{textos[idioma].subtitulo}</div>
               <div className="text-muted-foreground mb-4">
@@ -64,7 +64,7 @@ const textos = {
 
               </div>
 
-              <div className="bg-accent/10 p-4 rounded-lg">
+              <div className="bg-accent/10 p-4 ">
                 <p className="text-sm mb-2">
                   <strong>{textos[idioma].pregunta}</strong>
                 </p>

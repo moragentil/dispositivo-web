@@ -37,38 +37,40 @@ const HeroSection = ({ idioma }) => {
   }
 
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-primary/5 to-accent/5 pt-16 pb-8  md:py-20">
+    <section id="hero" className="relative bg-background pt-16 pb-8 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-12 items-center">
-          <div className="space-y-6">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className="space-y-6 text-center lg:text-left">
+            <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
               {textos[idioma].subtitulo}
-            </span>
+            </p>
             <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
               {textos[idioma].titulo} <span className="text-primary">{textos[idioma].tituloSpan}</span>
             </h1>
-            <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
               {textos[idioma].descripcion}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="#productos" >
-              <button className="w-full hover:cursor-pointer flex items-center justify-center px-6 py-2  font-medium rounded bg-primary hover:bg-primary/90 hover:scale-105 text-transform text-white transition-colors">
+              <button className="w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium bg-primary hover:bg-primary/90 text-white transition-colors">
                 {textos[idioma].botonVer}
                 <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
               </a>
-              <button className="hover:cursor-pointer flex items-center justify-center px-6 py-2  font-medium rounded border border-primary text-primary bg-white hover:scale-105 text-transform hover:bg-primary/10 transition-colors">
-                {textos[idioma].botonContactar}
-              </button>
+              <a href="tel:+541144695225">
+                <button className="w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium  border border-primary text-primary bg-white hover:bg-primary/10 transition-colors">
+                  {textos[idioma].botonContactar}
+                </button>
+              </a>
             </div>
           </div>
           <div className="relative flex items-center justify-center">
             <img
               src={images[current]}
               alt="Dispositivo médico Dis+"
-              className="rounded-lg shadow-2xl transition-all duration-700"
+              className=" shadow-xl transition-all duration-700"
               style={{ minHeight: 260, maxHeight: 320, objectFit: 'contain' }}
             />
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">

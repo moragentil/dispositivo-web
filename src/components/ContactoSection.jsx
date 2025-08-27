@@ -143,7 +143,7 @@ const textos ={
               </div>
             </div>
 
-            <div className="mt-8 rounded-lg overflow-hidden">
+            <div className="mt-8  overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.87952675156!2d-58.375828!3d-34.598601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacbb5d70bdb%3A0x9c01350f11eafdc2!2sAv.%20C%C3%B3rdoba%20632%2C%20C1054AAS%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1756134319806!5m2!1ses-419!2sus"
                 width="100%"
@@ -157,7 +157,7 @@ const textos ={
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6 sm:p-8">
+          <div className="bg-white shadow p-6 sm:p-8">
             <div className="mb-6">
               <div className="font-serif text-xl font-bold mb-2">{textos[idioma].formTitulo}</div>
               <div className="text-muted-foreground mb-4">{textos[idioma].formDescripcion}</div>
@@ -166,23 +166,23 @@ const textos ={
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium">{textos[idioma].nombre} *</label>
-                  <input className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].nombrePlaceholder} />
+                  <input className="w-full border  px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].nombrePlaceholder} />
                 </div>
                 <div>
                   <label className="text-sm font-medium">{textos[idioma].apellido} *</label>
-                  <input className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].apellidoPlaceholder} />
+                  <input className="w-full border  px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].apellidoPlaceholder} />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium">{textos[idioma].email} *</label>
-                <input type="email" className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].emailPlaceholder} />
+                <input type="email" className="w-full border  px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].emailPlaceholder} />
               </div>
               <div>
                 <label className="text-sm font-medium">{textos[idioma].mensaje} *</label>
-                <textarea className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" rows="4" placeholder={textos[idioma].mensajePlaceholder}></textarea>
+                <textarea className="w-full border  px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" rows="4" placeholder={textos[idioma].mensajePlaceholder}></textarea>
               </div>
               <div>
-                <button className="w-full bg-primary text-white rounded px-4 py-1 sm:py-2 font-semibold hover:bg-primary-dark transition-colors">
+                <button className="w-full bg-primary text-white  px-4 py-1 sm:py-2 font-semibold hover:bg-primary-dark transition-colors">
                   {textos[idioma].botonEnviar}
                 </button>
               </div>

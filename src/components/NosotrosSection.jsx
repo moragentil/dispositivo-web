@@ -78,7 +78,7 @@ const NosotrosSection = ({idioma}) => {
           <div className="flex flex-col h-full lg:min-h-[500px] justify-center">
             <div className="space-y-4 sm:space-y-8">
               {/* Vision */}
-              <div className="border-l-4 border-l-primary bg-white rounded-lg shadow overflow-hidden">
+              <div className="border-l-4 border-l-primary bg-white  shadow overflow-hidden">
                 <div
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("vision")}
@@ -109,7 +109,7 @@ const NosotrosSection = ({idioma}) => {
               </div>
 
               {/* Mision */}
-              <div className="border-l-4 border-l-primary bg-white rounded-lg shadow overflow-hidden">
+              <div className="border-l-4 border-l-primary bg-white  shadow overflow-hidden">
                 <div
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("mision")}
@@ -137,7 +137,7 @@ const NosotrosSection = ({idioma}) => {
               </div>
 
               {/* Estrategia */}
-              <div className="border-l-4 border-l-primary bg-white rounded-lg shadow overflow-hidden">
+              <div className="border-l-4 border-l-primary bg-white  shadow overflow-hidden">
                 <div
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("estrategia")}

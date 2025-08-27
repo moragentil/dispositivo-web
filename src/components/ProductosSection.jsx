@@ -54,8 +54,8 @@ const ProductosSection = ({ idioma }) => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-8 sm:mx-auto ">
-          <div className="group hover:shadow-xl transition-all duration-300 shadow-lg rounded-lg bg-white block ">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mb-3 flex items-center justify-center h-36">
+          <div className="group hover:shadow-xl transition-all duration-300 shadow-lg  bg-white block ">
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10  mb-3 flex items-center justify-center h-36">
               <img src="/images/dispositivo-naranja.png" alt="Autoinyector 1ml" className="w-fit h-auto object-contain mt-6" />
             </div>
             <div className="p-4 flex flex-col h-60">
@@ -72,7 +72,7 @@ const ProductosSection = ({ idioma }) => {
               </div>
               <div className="mt-auto">
                 <button
-                  className="w-full py-1 px-3 border border-primary rounded group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
+                  className="w-full py-1 px-3 border border-primary  group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
                   type="button"
                   onClick={() => handleDetalle('/producto/autoinyector-1ml')}
                 >
@@ -82,8 +82,8 @@ const ProductosSection = ({ idioma }) => {
             </div>
           </div>
 
-          <div className="group hover:shadow-xl transition-all duration-300 rounded-lg shadow-lg bg-white block">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mb-3 flex items-center justify-center h-36">
+          <div className="group hover:shadow-xl transition-all duration-300  shadow-lg bg-white block">
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10  mb-3 flex items-center justify-center h-36">
               <img src="/images/dispositivo-verde.png" alt="Pen 1,5/3ml" className="w-fit h-auto object-contain mt-6" />
             </div>
             <div className="p-4 flex flex-col h-60">
@@ -100,7 +100,7 @@ const ProductosSection = ({ idioma }) => {
               </div>
               <div className="mt-auto">
                 <button
-                  className="w-full py-1 px-3 border border-primary rounded group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
+                  className="w-full py-1 px-3 border border-primary  group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-primary font-semibold text-sm"
                   type="button"
                   onClick={() => handleDetalle('/producto/pen-1-5-3ml')}
                 >

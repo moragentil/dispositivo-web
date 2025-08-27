@@ -26,7 +26,7 @@ function App() {
                 <HeroSection idioma={idioma} />
                 <ProductosSection idioma={idioma} />
                 <NosotrosSection idioma={idioma} />
-                <InfoSection idioma={idioma} />
+{/*                 <InfoSection idioma={idioma} /> */}
                 <ContactoSection idioma={idioma} />
                 <EquipoSection idioma={idioma} />
                 <Footer idioma={idioma} />
