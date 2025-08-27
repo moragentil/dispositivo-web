@@ -39,7 +39,7 @@ const Header = ({ idioma, setIdioma }) => {
               </div>
             </div>
           </a>
-          <nav className="hidden md:flex items-center space-x-8 ">
+          <nav className="hidden lg:flex items-center space-x-8 ">
             <a
               href="#productos"
               className="hover:text-accent transition-colors text-white"
@@ -87,7 +87,7 @@ const Header = ({ idioma, setIdioma }) => {
             </div>
           </nav>
           <button 
-            className="md:hidden p-2 rounded hover:bg-accent transition-colors"
+            className="lg:hidden p-2 rounded hover:bg-accent transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -97,7 +97,7 @@ const Header = ({ idioma, setIdioma }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-primary shadow-lg">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-primary shadow-lg">
           <nav className="flex flex-col items-center space-y-4 p-4">
             <a href="#productos" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].productos}</a>
             <a href="#nosotros" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].quienesSomos}</a>
