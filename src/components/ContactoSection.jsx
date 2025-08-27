@@ -68,11 +68,11 @@ const textos ={
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{textos[idioma].titulo}</h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl text-muted-foreground">
             {textos[idioma].descripcion}
           </p>
         </div>
-        <h3 className="text-2xl font-serif font-semibold mb-6">{textos[idioma].infoTitulo}</h3>
+        <h3 className="text-xl sm:text-2xl font-serif font-semibold mb-6">{textos[idioma].infoTitulo}</h3>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -86,8 +86,8 @@ const textos ={
                       <circle cx="12" cy="11" r="2" />
                     </svg>
                     <div>
-                      <div className="font-semibold">{textos[idioma].direccion}</div>
-                      <div className="text-muted-foreground" style={{ whiteSpace: 'pre-line' }}>
+                      <div className="text-sm sm:text-base font-semibold">{textos[idioma].direccion}</div>
+                      <div className="text-sm sm:text-base text-muted-foreground" style={{ whiteSpace: 'pre-line' }}>
                         {contactoData.direccion}
                       </div>
                     </div>
@@ -99,8 +99,8 @@ const textos ={
                       <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.37 1.6.72 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.74.35 1.53.59 2.34.72A2 2 0 0 1 21 16.91z" />
                     </svg>
                     <div>
-                      <div className="font-semibold">{textos[idioma].telefono}</div>
-                      <div className="text-muted-foreground">{contactoData.telefono}</div>
+                      <div className="text-sm sm:text-base font-semibold">{textos[idioma].telefono}</div>
+                      <div className="text-sm sm:text-base text-muted-foreground">{contactoData.telefono}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -110,8 +110,8 @@ const textos ={
                       <circle cx="12" cy="18" r="1" />
                     </svg>
                     <div>
-                      <div className="font-semibold">Mobile</div>
-                      <div className="text-muted-foreground">{contactoData.mobile}</div>
+                      <div className="text-sm sm:text-base font-semibold">Mobile</div>
+                      <div className="text-sm sm:text-base text-muted-foreground">{contactoData.mobile}</div>
                     </div>
                   </div>
 
@@ -123,15 +123,15 @@ const textos ={
                     <polyline points="3 7 12 13 21 7" />
                   </svg>
                   <div>
-                    <div className="font-semibold">Email</div>
-                    <div className="text-muted-foreground">{contactoData.email}</div>
+                    <div className="text-sm sm:text-base font-semibold">Email</div>
+                    <div className="text-sm sm:text-base text-muted-foreground">{contactoData.email}</div>
                   </div>
                 </div>
                                 </div>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">{textos[idioma].contactosDirectos}</h4>
-                <div className="space-y-3 text-sm">
+                <h4 className="text-base  font-semibold mb-2 sm:mb-4">{textos[idioma].contactosDirectos}</h4>
+                <div className="space-y-3 text-xs sm:text-sm">
                   {contactoData.directos.map((contact, idx) => (
                     <div key={idx}>
                       <div className="font-medium">{contact.nombre}</div>
@@ -157,7 +157,7 @@ const textos ={
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-8">
+          <div className="bg-white rounded-lg shadow p-6 sm:p-8">
             <div className="mb-6">
               <div className="font-serif text-xl font-bold mb-2">{textos[idioma].formTitulo}</div>
               <div className="text-muted-foreground mb-4">{textos[idioma].formDescripcion}</div>
@@ -166,23 +166,23 @@ const textos ={
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium">{textos[idioma].nombre} *</label>
-                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].nombrePlaceholder} />
+                  <input className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].nombrePlaceholder} />
                 </div>
                 <div>
                   <label className="text-sm font-medium">{textos[idioma].apellido} *</label>
-                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].apellidoPlaceholder} />
+                  <input className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].apellidoPlaceholder} />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium">{textos[idioma].email} *</label>
-                <input type="email" className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].emailPlaceholder} />
+                <input type="email" className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" placeholder={textos[idioma].emailPlaceholder} />
               </div>
               <div>
                 <label className="text-sm font-medium">{textos[idioma].mensaje} *</label>
-                <textarea className="w-full border rounded px-3 py-2 mt-1" rows="4" placeholder={textos[idioma].mensajePlaceholder}></textarea>
+                <textarea className="w-full border rounded px-3 py-1 sm:py-2 mt-1 text-sm sm:text-base" rows="4" placeholder={textos[idioma].mensajePlaceholder}></textarea>
               </div>
               <div>
-                <button className="w-full bg-primary text-white rounded px-4 py-2 font-semibold hover:bg-primary-dark transition-colors">
+                <button className="w-full bg-primary text-white rounded px-4 py-1 sm:py-2 font-semibold hover:bg-primary-dark transition-colors">
                   {textos[idioma].botonEnviar}
                 </button>
               </div>

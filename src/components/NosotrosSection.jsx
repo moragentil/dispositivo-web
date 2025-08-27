@@ -51,24 +51,24 @@ const NosotrosSection = ({idioma}) => {
   return (
     <section id="nosotros" className="py-8 scroll-mt-12">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-16 items-start">
           {/* Sección Historia */}
           <div className="space-y-8 ">
             <div>
               <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-6">{textos[idioma].titulo}</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-xs sm:text-sm">
                 {textos[idioma].historia1}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-xs sm:text-sm">
               {textos[idioma].historia2}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-xs sm:text-sm">
                 {textos[idioma].historia3}
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-xs sm:text-sm">
                 {textos[idioma].historia4}
               </p>
-              <p className="text-muted-foreground leading-relaxed text-sm">
+              <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                 {textos[idioma].historia5}
               </p>
             </div>
@@ -76,14 +76,14 @@ const NosotrosSection = ({idioma}) => {
 
           {/* Segunda columna con tarjetas y recuadros */}
           <div className="flex flex-col h-full lg:min-h-[500px] justify-center">
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-8">
               {/* Vision */}
               <div className="border-l-4 border-l-primary bg-white rounded-lg shadow overflow-hidden">
                 <div
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("vision")}
                 >
-                  <h3 className="text-2xl font-serif font-bold text-primary">{textos[idioma].vision}</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary">{textos[idioma].vision}</h3>
                   <svg
                     className={`h-5 w-5 text-primary transition-transform duration-200 ${openCard === "vision" ? "rotate-180" : ""}`}
                     fill="none"
@@ -98,10 +98,10 @@ const NosotrosSection = ({idioma}) => {
                   className={`transition-all duration-300 ease-in-out ${openCard === "vision" ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
                 >
                   <div className="px-4 pb-4">
-                    <p className="text-muted-foreground leading-relaxed mb-2 text-sm">
+                    <p className="text-muted-foreground leading-relaxed mb-2 text-xs sm:text-sm">
                       {textos[idioma].visionTexto}
                     </p>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
+                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                       {textos[idioma].visionTexto2}
                     </p>
                   </div>
@@ -114,7 +114,7 @@ const NosotrosSection = ({idioma}) => {
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("mision")}
                 >
-                  <h3 className="text-2xl font-serif font-bold text-primary">{textos[idioma].mision}</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary">{textos[idioma].mision}</h3>
                   <svg
                     className={`h-5 w-5 text-primary transition-transform duration-200 ${openCard === "mision" ? "rotate-180" : ""}`}
                     fill="none"
@@ -129,7 +129,7 @@ const NosotrosSection = ({idioma}) => {
                   className={`transition-all duration-300 ease-in-out ${openCard === "mision" ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
                 >
                   <div className="px-4 pb-4">
-                    <p className="text-muted-foreground leading-relaxed text-sm">
+                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                       {textos[idioma].misionTexto}
                     </p>
                   </div>
@@ -142,7 +142,7 @@ const NosotrosSection = ({idioma}) => {
                   className="p-4 cursor-pointer hover:bg-gray-50 transition-colors flex justify-between items-center"
                   onClick={() => toggleCard("estrategia")}
                 >
-                  <h3 className="text-2xl font-serif font-bold text-primary">{textos[idioma].estrategia}</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary">{textos[idioma].estrategia}</h3>
                   <svg
                     className={`h-5 w-5 text-primary transition-transform duration-200 ${openCard === "estrategia" ? "rotate-180" : ""}`}
                     fill="none"
@@ -157,7 +157,7 @@ const NosotrosSection = ({idioma}) => {
                   className={`transition-all duration-300 ease-in-out ${openCard === "estrategia" ? "max-h-96 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
                 >
                   <div className="px-4 pb-4">
-                    <p className="text-muted-foreground leading-relaxed text-sm">
+                    <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                       {textos[idioma].estrategiaTexto}
                     </p>
                   </div>

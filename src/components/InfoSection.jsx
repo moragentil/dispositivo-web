@@ -29,8 +29,8 @@ const textos = {
     <section className="py-20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{textos[idioma].titulo} <span className='font-bionical'>dis+</span>?</h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-2 sm:mb-4">{textos[idioma].titulo} <span className='font-bionical'>dis+</span>?</h2>
+          <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto">
             {textos[idioma].descripcion}
           </p>
         </div>

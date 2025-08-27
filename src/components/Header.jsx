@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 // Si tienes estos componentes, importa Button y Menu. Si no, usa un botón simple y un ícono SVG.
 // import { Button } from '../ui/Button'
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Header = ({ idioma, setIdioma }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-const textos = {
-  es: {
-    productos: "Productos",
-    quienesSomos: "Quiénes Somos",
-    contacto: "Contacto",
-    sumateAlEquipo: "Sumate al Equipo",
-  },
-  en: {
-    productos: "Products",
-    quienesSomos: "Who We Are",
-    contacto: "Contact",
-    sumateAlEquipo: "Join our Team",
+  const textos = {
+    es: {
+      productos: "Productos",
+      quienesSomos: "Quiénes Somos",
+      contacto: "Contacto",
+      sumateAlEquipo: "Sumate al Equipo",
+    },
+    en: {
+      productos: "Products",
+      quienesSomos: "Who We Are",
+      contacto: "Contact",
+      sumateAlEquipo: "Join our Team",
+    }
   }
-}
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
@@ -73,11 +78,41 @@ const textos = {
               </button>
             </div>
           </nav>
-          <button className="md:hidden p-2 rounded hover:bg-accent transition-colors">
-            <Menu className="h-5 w-5" />
+          <button 
+            className="md:hidden p-2 rounded hover:bg-accent transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-primary shadow-lg">
+          <nav className="flex flex-col items-center space-y-4 p-4">
+            <a href="#productos" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].productos}</a>
+            <a href="#nosotros" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].quienesSomos}</a>
+            <a href="#contacto" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].contacto}</a>
+            <a href="#equipo" onClick={handleNavClick} className="hover:text-accent transition-colors text-white">{textos[idioma].sumateAlEquipo}</a>
+            <div className="flex items-center space-x-2 text-sm pt-4 border-t border-primary-foreground/20 w-full justify-center mt-4">
+              <button
+                className={idioma === 'es' ? 'hover:scale-115 text-transform ' : 'hover:scale-115 text-transform text-accent'}
+                onClick={() => setIdioma('es')}
+              >
+                Español
+              </button>
+              <span>/</span>
+              <button
+                className={idioma === 'en' ? 'hover:scale-115 text-transform' : 'hover:scale-115 text-transform text-accent'}
+                onClick={() => setIdioma('en')}
+              >
+                English
+              </button>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }
