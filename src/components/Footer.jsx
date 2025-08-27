@@ -28,6 +28,7 @@ const textos = {
     contacto: "Contacto",
     navegacion: "Navegación",
     linkProd: "Productos",
+    linkNovedades: "Novedades",
     linkNosotros: "Quiénes Somos",
     linkContacto: "Contacto",
     linkEquipo: "Sumate al Equipo",
@@ -40,6 +41,7 @@ const textos = {
     contacto: "Contact",
     navegacion: "Navigation",
     linkProd: "Products",
+    linkNovedades: "News",
     linkNosotros: "About Us",
     linkContacto: "Contact",
     linkEquipo: "Join the Team",
@@ -78,6 +80,11 @@ const textos = {
               <div>
                 <a href="#productos" className="hover:text-accent transition-colors">
                   {textos[idioma].linkProd}
+                </a>
+              </div>
+              <div>
+                <a href="#novedades" className="hover:text-accent transition-colors">
+                  {textos[idioma].linkNovedades}
                 </a>
               </div>
               <div>

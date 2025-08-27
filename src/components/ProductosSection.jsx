@@ -149,7 +149,7 @@ const ProductosSection = ({ idioma }) => {
                 </ul>
                 <div className="mt-auto">
                   <button
-                    className="w-full py-2 px-4 border border-primary rounded-md transition-colors duration-300 font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed group-hover:bg-primary group-hover:text-primary-foreground enabled:hover:bg-primary enabled:hover:text-primary-foreground bg-transparent text-primary"
+                    className="w-full py-2 px-4 border border-primary  transition-colors duration-300 font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed group-hover:bg-primary group-hover:text-primary-foreground enabled:hover:bg-primary enabled:hover:text-primary-foreground bg-transparent text-primary"
                     type="button"
                     onClick={() => handleDetalle(`/producto/${producto.id}`)}
                     disabled={producto.comingSoon}
