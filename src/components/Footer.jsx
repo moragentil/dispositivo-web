@@ -51,6 +51,9 @@ const textos = {
   }
 }
 
+  const formatWhatsApp = (phone) => `https://wa.me/${phone.replace(/\D/g, '')}`;
+  const formatTel = (phone) => `tel:${phone.replace(/\s/g, '').replace('(', '').replace(')', '')}`;
+
   return (
     <footer className="bg-primary text-primary-foreground pt-12 pb-6 sm:py-12">
       <div className="container mx-auto px-4">
@@ -68,9 +71,15 @@ const textos = {
           <div>
             <h4 className="font-semibold mb-4">{textos[idioma].contacto}</h4>
             <div className="space-y-2 text-sm opacity-90">
-              <div>Tel: {contactoData.telefono}</div>
-              <div>Mobile: {contactoData.mobile}</div>
-              <div>Email: {contactoData.email}</div>
+              <div>
+                Tel: <a href={formatTel(contactoData.telefono)} className="hover:text-accent transition-colors">{contactoData.telefono}</a>
+              </div>
+              <div>
+                Mobile: <a href={formatWhatsApp(contactoData.mobile)} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">{contactoData.mobile}</a>
+              </div>
+              <div>
+                Email: <a href={`mailto:${contactoData.email}`} className="hover:text-accent transition-colors">{contactoData.email}</a>
+              </div>
             </div>
           </div>
 
