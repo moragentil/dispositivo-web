@@ -35,11 +35,11 @@ const productosData = {
     producto3: {
       id: 'pen-descartable',
       nombre: "Pen Descartable",
-      desc: "Pluma inyectora de un solo uso, lista para usar. Ideal para simplificar tratamientos.",
+      desc: "Próximo relanzamiento. Un diseño actualizado con nuevas funcionalidades para una experiencia de usuario mejorada.",
       features: [
         "Uso único, máxima higiene",
         "Diseño compacto y ligero",
-        "No requiere configuración",
+        "Funcionalidades mejoradas",
       ],
       imgSrc: "/images/dispositivo-verde.png",
       comingSoon: true
@@ -71,11 +71,11 @@ const productosData = {
     producto3: {
       id: 'pen-descartable',
       nombre: "Disposable Pen",
-      desc: "Single-use injector pen, ready to use. Ideal for simplifying treatments.",
+      desc: "Upcoming relaunch. An updated design with new features for an improved user experience.",
       features: [
         "Single use, maximum hygiene",
         "Compact and lightweight design",
-        "No configuration required",
+        "Enhanced features",
       ],
       imgSrc: "/images/dispositivo-verde.png",
       comingSoon: true
@@ -97,20 +97,20 @@ const ProductosSection = ({ idioma }) => {
       titulo: "Nuestros Productos",
       subtitulo: "Dispositivos médicos diseñados con precisión para satisfacer las necesidades más exigentes de la industria farmacéutica.",
       botonDetalle: "Ver Detalle",
-      proximamente: "Próximamente",
+      proximamente: "Relanzamiento",
     },
     en:{
       titulo: "Our Products",
       subtitulo: "Medical devices designed with precision to meet the most demanding needs of the pharmaceutical industry.",
       botonDetalle: "View Details",
-      proximamente: "Coming Soon",
+      proximamente: "Relaunch",
     }
   }
 
   const productos = [productosData[idioma].producto1, productosData[idioma].producto2, productosData[idioma].producto3];
 
   return (
-    <section id="productos" className="py-16 bg-muted/40 scroll-mt-16">
+    <section id="productos" className="py-16 bg-muted/40 ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 text-foreground">{textos[idioma].titulo}</h2>

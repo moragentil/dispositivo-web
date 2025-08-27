@@ -5,47 +5,47 @@ const novedadesData = {
   es: [
     {
       id: 1,
-      titulo: 'Guía de Uso: Autoinyector 1ml',
-      descripcion: 'Aprende a utilizar nuestro autoinyector de 1ml de forma segura y eficaz con esta guía paso a paso.',
-      videoId: 'dQw4w9WgXcQ', // Reemplazar con ID de video real
+      titulo: 'Instructivo: DIS+ Descartable',
+      descripcion: 'Guía completa sobre cómo utilizar el dispositivo DIS+ Descartable de forma segura y efectiva.',
+      videoId: 'K9p08cCAfo0', // Reemplazar con ID de video real
       categoria: 'Instructivo'
     },
     {
       id: 2,
-      titulo: 'Nuevas Características del Pen Reutilizable',
-      descripcion: 'Descubre las últimas actualizaciones y mejoras en nuestro Pen Reutilizable de 1.5/3ml.',
-      videoId: 'dQw4w9WgXcQ', // Reemplazar con ID de video real
-      categoria: 'Actualización'
+      titulo: 'Instructivo: DIS JET',
+      descripcion: 'Aprende a usar el inyector sin aguja DIS JET con este tutorial detallado.',
+      videoId: 'bhZymp9C9dg', // Reemplazar con ID de video real
+      categoria: 'Instructivo'
     },
     {
       id: 3,
-      titulo: 'Mantenimiento de Dispositivos',
-      descripcion: 'Consejos y mejores prácticas para el mantenimiento de nuestros dispositivos para asegurar su longevidad.',
-      videoId: 'dQw4w9WgXcQ', // Reemplazar con ID de video real
-      categoria: 'Guía'
+      titulo: 'Instructivo: DIS+ Reutilizable',
+      descripcion: 'Descubre cómo operar y mantener tu dispositivo DIS+ Reutilizable para un rendimiento óptimo.',
+      videoId: 'SMA244pyuXo', // Reemplazar con ID de video real
+      categoria: 'Instructivo'
     }
   ],
   en: [
     {
       id: 1,
-      titulo: 'User Guide: 1ml Autoinjector',
-      descripcion: 'Learn how to use our 1ml autoinjector safely and effectively with this step-by-step guide.',
-      videoId: 'dQw4w9WgXcQ', // Replace with actual video ID
+      titulo: 'Instructional: DIS+ Disposable',
+      descripcion: 'A complete guide on how to use the DIS+ Disposable device safely and effectively.',
+      videoId: 'K9p08cCAfo0', // Replace with actual video ID
       categoria: 'Instructional'
     },
     {
       id: 2,
-      titulo: 'New Features of the Reusable Pen',
-      descripcion: 'Discover the latest updates and improvements to our 1.5/3ml Reusable Pen.',
-      videoId: 'dQw4w9WgXcQ', // Replace with actual video ID
-      categoria: 'Update'
+      titulo: 'Instructional: DIS JET',
+      descripcion: 'Learn how to use the DIS JET needle-free injector with this detailed tutorial.',
+      videoId: 'bhZymp9C9dg', // Replace with actual video ID
+      categoria: 'Instructional'
     },
     {
       id: 3,
-      titulo: 'Device Maintenance',
-      descripcion: 'Tips and best practices for maintaining our devices to ensure their longevity.',
-      videoId: 'dQw4w9WgXcQ', // Replace with actual video ID
-      categoria: 'Guide'
+      titulo: 'Instructional: DIS+ Reusable',
+      descripcion: 'Discover how to operate and maintain your DIS+ Reusable device for optimal performance.',
+      videoId: 'SMA244pyuXo', // Replace with actual video ID
+      categoria: 'Instructional'
     }
   ]
 };
@@ -65,7 +65,7 @@ const NovedadesSection = ({ idioma }) => {
   const novedades = novedadesData[idioma];
 
   return (
-    <section id="novedades" className="py-16 bg-background scroll-mt-16">
+    <section id="novedades" className="py-16 bg-background ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 text-foreground">{textos[idioma].titulo}</h2>

@@ -9,12 +9,14 @@ const Header = ({ idioma, setIdioma }) => {
   const textos = {
     es: {
       productos: "Productos",
+      novedades: "Novedades",
       quienesSomos: "Quiénes Somos",
       contacto: "Contacto",
       sumateAlEquipo: "Sumate al Equipo",
     },
     en: {
       productos: "Products",
+      novedades: "News",
       quienesSomos: "Who We Are",
       contacto: "Contact",
       sumateAlEquipo: "Join our Team",
@@ -43,6 +45,12 @@ const Header = ({ idioma, setIdioma }) => {
               className="hover:text-accent transition-colors text-white"
             >
               {textos[idioma].productos}
+            </a>
+            <a
+              href="#novedades"
+              className="hover:text-accent transition-colors text-white"
+            >
+              {textos[idioma].novedades}
             </a>
             <a
               href="#nosotros"
