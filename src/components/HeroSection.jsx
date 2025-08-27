@@ -21,7 +21,7 @@ const HeroSection = ({ idioma }) => {
       titulo: "Dispositivos Médicos de",
       tituloSpan: "Precisión",
       descripcion:
-        "Desarrollamos y fabricamos autoinyectores y pens de alta calidad para la industria farmacéutica, mejorando la salud y el bienestar de pacientes en toda Argentina y el mundo.",
+        "Desarrollamos y fabricamos autoinyectores y pens de alta calidad. Nuestro diferencial es crear soluciones a medida, adaptando cada dispositivo a las necesidades específicas de la industria farmacéutica.",
       botonVer: "Ver Productos",
       botonContactar: "Contactar Ahora"
       },
@@ -30,7 +30,7 @@ const HeroSection = ({ idioma }) => {
       titulo: "Precision",
       tituloSpan: "Medical Devices",
       descripcion:
-        "We develop and manufacture high-quality auto-injectors and pens for the pharmaceutical industry, improving the health and well-being of patients throughout Argentina and the world.",
+        "We develop and manufacture high-quality auto-injectors and pens. Our differential is creating custom solutions, adapting each device to the specific needs of the pharmaceutical industry.",
       botonVer: "View Products",
       botonContactar: "Contact Now"
     },
@@ -40,19 +40,19 @@ const HeroSection = ({ idioma }) => {
     <section id="hero" className="relative bg-background pt-16 pb-8 md:py-14">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <div className="space-y-6 text-center lg:text-left">
+          <div className="space-y-4 text-center lg:text-left">
             <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
               {textos[idioma].subtitulo}
             </p>
             <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
               {textos[idioma].titulo} <span className="text-primary">{textos[idioma].tituloSpan}</span>
             </h1>
-            <p className="text-base sm:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
               {textos[idioma].descripcion}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className=" flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="#productos" >
-              <button className="w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium bg-primary hover:bg-primary/90 text-white transition-colors">
+              <button className="mt-2 w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium bg-primary hover:bg-primary/90 text-white transition-colors">
                 {textos[idioma].botonVer}
                 <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -60,7 +60,7 @@ const HeroSection = ({ idioma }) => {
               </button>
               </a>
               <a href="tel:+541144695225">
-                <button className="w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium  border border-primary text-primary bg-white hover:bg-primary/10 transition-colors">
+                <button className="mt-2 w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium  border border-primary text-primary bg-white hover:bg-primary/10 transition-colors">
                   {textos[idioma].botonContactar}
                 </button>
               </a>

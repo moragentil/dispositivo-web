@@ -39,8 +39,8 @@ const textos = {
     <section id="equipo" className="py-12 bg-muted/30 scroll-mt-6">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 sm:mb-6">{textos[idioma].titulo}</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-4 sm:mb-8">
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-2 sm:mb-4">{textos[idioma].titulo}</h2>
+          <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6">
             {textos[idioma].descripcion}
           </p>
 

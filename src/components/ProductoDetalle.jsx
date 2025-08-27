@@ -142,9 +142,9 @@ const ProductoDetalle = ({idioma}) => {
       </div>
 
       {/* Main Product Views */}
-      <div className="bg-white rounded-lg   mb-8">
+      <div className="bg-white    mb-8">
         <div className="flex justify-center">
-          <div className=" rounded-lg  h-80 flex items-center justify-center">
+          <div className="   h-80 flex items-center justify-center">
             <img
               src={
                 productoId === 'autoinyector-1ml'
@@ -175,7 +175,7 @@ const ProductoDetalle = ({idioma}) => {
                   <p className="text-sm text-gray-700 mb-2">{paso.texto}</p>
                   {/* Solo mostrar imagen si existe */}
                   {paso.img && (
-                    <div className="rounded p-2 h-12 flex items-center">
+                    <div className=" p-2 h-12 flex items-center">
                       <img src={paso.img} alt={`Paso ${idx + 1}`} className="h-10 w-auto object-contain" />
                     </div>
                   )}
@@ -205,7 +205,7 @@ const ProductoDetalle = ({idioma}) => {
           href={producto.folleto}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg flex items-center gap-2 font-medium"
+          className="bg-primary hover:bg-primary/90 text-white px-5 py-2  flex items-center gap-2 font-medium"
         >
           <IconDownload />
           {textos[idioma].descargar}
