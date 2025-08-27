@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import {ArrowLeft} from 'lucide-react'
 
 const productosData = {
@@ -134,7 +134,7 @@ const ProductoDetalle = ({idioma}) => {
   return (
     <div className="max-w-6xl mx-auto p-6 ">
       <div className="mb-8">
-        <a href="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> {textos[idioma].volver}</a>
+        <Link to="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> {textos[idioma].volver}</Link>
       </div>
       {/* Header */}
       <div className="mb-4">
