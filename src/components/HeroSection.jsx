@@ -40,7 +40,7 @@ const HeroSection = ({ idioma }) => {
   const formatWhatsApp = (phone) => `https://wa.me/${phone.replace(/\D/g, '')}`;
 
   return (
-    <section id="hero" className="relative bg-background pt-16 pb-8 md:py-20 overflow-hidden">
+    <section id="hero" className="relative bg-background pt-16 pb-8 md:py-16 overflow-hidden">
       {/* Background Image for large screens */}
       <div className="absolute top-0 right-0 h-full w-1/2 hidden lg:block">
         <img
