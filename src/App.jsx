@@ -9,6 +9,7 @@ import ContactoSection from './components/ContactoSection'
 import EquipoSection from './components/EquipoSection'
 import Footer from './components/Footer'
 import ProductoDetalle from './components/ProductoDetalle'
+import NovedadesSection from './components/NovedadesSection'
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <>
                 <HeroSection idioma={idioma} />
                 <ProductosSection idioma={idioma} />
+                <NovedadesSection idioma={idioma} />
                 <NosotrosSection idioma={idioma} />
 {/*                 <InfoSection idioma={idioma} /> */}
                 <ContactoSection idioma={idioma} />

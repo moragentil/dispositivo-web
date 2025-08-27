@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { contactoData } from './ContactoSection'
 
 const images = [
   '/images/dispositivo-naranja.png',
@@ -36,6 +37,8 @@ const HeroSection = ({ idioma }) => {
     },
   }
 
+  const formatWhatsApp = (phone) => `https://wa.me/${phone.replace(/\D/g, '')}`;
+
   return (
     <section id="hero" className="relative bg-background pt-16 pb-8 md:py-14">
       <div className="container mx-auto px-4">
@@ -59,7 +62,7 @@ const HeroSection = ({ idioma }) => {
                 </svg>
               </button>
               </a>
-              <a href="tel:+541144695225">
+              <a href={formatWhatsApp(contactoData.mobile)} target="_blank" rel="noopener noreferrer">
                 <button className="mt-2 w-full sm:w-auto hover:cursor-pointer flex items-center justify-center px-6 py-3 font-medium  border border-primary text-primary bg-white hover:bg-primary/10 transition-colors">
                   {textos[idioma].botonContactar}
                 </button>

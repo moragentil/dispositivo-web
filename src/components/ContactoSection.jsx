@@ -63,6 +63,9 @@ const textos ={
   }
 }
 
+  const formatWhatsApp = (phone) => `https://wa.me/${phone.replace(/\D/g, '')}`;
+  const formatTel = (phone) => `tel:${phone.replace(/\s/g, '').replace('(', '').replace(')', '')}`;
+
   return (
     <section id="contacto" className="py-12 scroll-mt-6">
       <div className="container mx-auto px-4">
@@ -100,7 +103,7 @@ const textos ={
                     </svg>
                     <div>
                       <div className="text-sm sm:text-base font-semibold">{textos[idioma].telefono}</div>
-                      <div className="text-sm sm:text-base text-muted-foreground">{contactoData.telefono}</div>
+                      <a href={formatTel(contactoData.telefono)} className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">{contactoData.telefono}</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -111,7 +114,7 @@ const textos ={
                     </svg>
                     <div>
                       <div className="text-sm sm:text-base font-semibold">Mobile</div>
-                      <div className="text-sm sm:text-base text-muted-foreground">{contactoData.mobile}</div>
+                        <a href={formatWhatsApp(contactoData.mobile)} target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">{contactoData.mobile}</a>
                     </div>
                   </div>
 
@@ -124,19 +127,22 @@ const textos ={
                   </svg>
                   <div>
                     <div className="text-sm sm:text-base font-semibold">Email</div>
-                    <div className="text-sm sm:text-base text-muted-foreground">{contactoData.email}</div>
-                  </div>
+<a href={`mailto:${contactoData.email}`} className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">{contactoData.email}</a>                  </div>
                 </div>
                                 </div>
               </div>
               <div>
                 <h4 className="text-base  font-semibold mb-2 sm:mb-4">{textos[idioma].contactosDirectos}</h4>
-                <div className="space-y-3 text-xs sm:text-sm">
+ <div className="space-y-3 text-xs sm:text-sm">
                   {contactoData.directos.map((contact, idx) => (
                     <div key={idx}>
                       <div className="font-medium">{contact.nombre}</div>
-                      <div className="text-muted-foreground">Mobile: {contact.mobile}</div>
-                      <div className="text-muted-foreground">{contact.email}</div>
+                      <div className="text-muted-foreground">
+                        Mobile: <a href={formatWhatsApp(contact.mobile)} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{contact.mobile}</a>
+                      </div>
+                      <div className="text-muted-foreground">
+                        <a href={`mailto:${contact.email}`} className="hover:text-primary transition-colors break-all">{contact.email}</a>
+                      </div>
                     </div>
                   ))}
                 </div>
