@@ -1,5 +1,6 @@
 // filepath: src/components/NovedadesSection.jsx
 import React from 'react';
+import { Download } from 'lucide-react';
 
 const novedadesData = {
   es: [
@@ -7,21 +8,21 @@ const novedadesData = {
       id: 1,
       titulo: 'Instructivo: DIS+ Descartable',
       descripcion: 'Guía completa sobre cómo utilizar el dispositivo DIS+ Descartable de forma segura y efectiva.',
-      videoId: 'K9p08cCAfo0', // Reemplazar con ID de video real
+      videoId: 'K9p08cCAfo0',
       categoria: 'Instructivo'
     },
     {
       id: 2,
       titulo: 'Instructivo: DIS JET',
       descripcion: 'Aprende a usar el inyector sin aguja DIS JET con este tutorial detallado.',
-      videoId: 'bhZymp9C9dg', // Reemplazar con ID de video real
+      videoId: 'bhZymp9C9dg',
       categoria: 'Instructivo'
     },
     {
       id: 3,
       titulo: 'Instructivo: DIS+ Reutilizable',
       descripcion: 'Descubre cómo operar y mantener tu dispositivo DIS+ Reutilizable para un rendimiento óptimo.',
-      videoId: 'SMA244pyuXo', // Reemplazar con ID de video real
+      videoId: 'SMA244pyuXo',
       categoria: 'Instructivo'
     }
   ],
@@ -30,23 +31,34 @@ const novedadesData = {
       id: 1,
       titulo: 'Instructional: DIS+ Disposable',
       descripcion: 'A complete guide on how to use the DIS+ Disposable device safely and effectively.',
-      videoId: 'K9p08cCAfo0', // Replace with actual video ID
+      videoId: 'K9p08cCAfo0',
       categoria: 'Instructional'
     },
     {
       id: 2,
       titulo: 'Instructional: DIS JET',
       descripcion: 'Learn how to use the DIS JET needle-free injector with this detailed tutorial.',
-      videoId: 'bhZymp9C9dg', // Replace with actual video ID
+      videoId: 'bhZymp9C9dg',
       categoria: 'Instructional'
     },
     {
       id: 3,
       titulo: 'Instructional: DIS+ Reusable',
       descripcion: 'Discover how to operate and maintain your DIS+ Reusable device for optimal performance.',
-      videoId: 'SMA244pyuXo', // Replace with actual video ID
+      videoId: 'SMA244pyuXo',
       categoria: 'Instructional'
     }
+  ]
+};
+
+const guiasData = {
+  es: [
+    { id: 'autoinyector', nombre: 'Guía Autoinyector 1ml', pdf: '/archivos/Autoinyector-esp.pdf' },
+    { id: 'pen', nombre: 'Guía Pen Reutilizable', pdf: '/archivos/Pen-esp.pdf' }
+  ],
+  en: [
+    { id: 'autoinyector', nombre: 'Guide Autoinjector 1ml', pdf: '/archivos/Autoinyector-esp.pdf' },
+    { id: 'pen', nombre: 'Guide Reusable Pen', pdf: '/archivos/Pen-esp.pdf' }
   ]
 };
 
@@ -54,15 +66,18 @@ const NovedadesSection = ({ idioma }) => {
   const textos = {
     es: {
       titulo: 'Novedades e Instructivos',
-      subtitulo: 'Mantente al día con las últimas actualizaciones, guías de uso y tutoriales en video para nuestros dispositivos.'
+      subtitulo: 'Mantente al día con las últimas actualizaciones, guías de uso y tutoriales en video para nuestros dispositivos.',
+      tituloGuias: 'Guías de Uso para Descargar'
     },
     en: {
       titulo: 'News and Instructions',
-      subtitulo: 'Stay up to date with the latest updates, user guides, and video tutorials for our devices.'
+      subtitulo: 'Stay up to date with the latest updates, user guides, and video tutorials for our devices.',
+      tituloGuias: 'User Guides for Download'
     }
   };
 
   const novedades = novedadesData[idioma];
+  const guias = guiasData[idioma];
 
   return (
     <section id="novedades" className="py-16 bg-background ">
@@ -96,6 +111,24 @@ const NovedadesSection = ({ idioma }) => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <h3 className="text-2xl font-serif font-bold mb-6 text-foreground">{textos[idioma].tituloGuias}</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {guias.map((guia) => (
+              <a
+                key={guia.id}
+                href={guia.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary bg-white hover:bg-primary/10 transition-colors text-sm font-medium"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                <span>{guia.nombre}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
