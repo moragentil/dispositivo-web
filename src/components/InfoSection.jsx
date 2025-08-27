@@ -1,13 +1,37 @@
 import React from 'react'
 
-const InfoSection = () => {
+const InfoSection = ({idioma}) => {
+
+const textos = {
+  es:{
+    titulo: "¿Por Qué Elegir",
+    descripcion: "Trabajamos en forma mancomunada con la industria farmacéutica y los pacientes",
+    experiencia:"Experiencia Comprobada",
+    expTexto: "Más de una década desarrollando soluciones médicas innovadoras para la industria farmacéutica.",
+    alcance: "Alcance Internacional",
+    alcanceTexto: "Nuestros dispositivos mejoran la vida de pacientes en Argentina y el mundo.",
+    calidad: "Calidad Garantizada",
+    calidadTexto: "Cumplimos con los más altos estándares de calidad y seguridad médica.",
+  },
+  en: {
+    titulo: "Why Choose",
+    descripcion: "We work hand in hand with the pharmaceutical industry and patients.",
+    experiencia: "Proven Experience",
+    expTexto: "Over a decade of developing innovative medical solutions for the pharmaceutical industry.",
+    alcance: "International Reach",
+    alcanceTexto: "Our devices improve the lives of patients in Argentina and around the world.",
+    calidad: "Guaranteed Quality",
+    calidadTexto: "We comply with the highest standards of medical quality and safety.",
+  }
+}
+
   return (
     <section className="py-20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">¿Por Qué Elegir <span className='font-bionical'>dis+?</span></h2>
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{textos[idioma].titulo} <span className='font-bionical'>dis+</span>?</h2>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Trabajamos en forma mancomunada con la industria farmacéutica y los pacientes
+            {textos[idioma].descripcion}
           </p>
         </div>
 
@@ -19,9 +43,9 @@ const InfoSection = () => {
                 <path d="M17 21v-2a4 4 0 0 0-3-3.87M9 21v-2a4 4 0 0 1 3-3.87M7 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0zm5 8a4 4 0 0 0-3-3.87" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif font-semibold mb-2">Experiencia Comprobada</h3>
+            <h3 className="text-xl font-serif font-semibold mb-2">{textos[idioma].experiencia}</h3>
             <p className="opacity-90">
-              Más de una década desarrollando soluciones médicas innovadoras para la industria farmacéutica.
+              {textos[idioma].expTexto}
             </p>
           </div>
 
@@ -33,8 +57,8 @@ const InfoSection = () => {
                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif font-semibold mb-2">Alcance Internacional</h3>
-            <p className="opacity-90">Nuestros dispositivos mejoran la vida de pacientes en Argentina y el mundo.</p>
+            <h3 className="text-xl font-serif font-semibold mb-2">{textos[idioma].alcance}</h3>
+            <p className="opacity-90">{textos[idioma].alcanceTexto}</p>
           </div>
 
           <div className="text-center">
@@ -44,8 +68,8 @@ const InfoSection = () => {
                 <path d="M12 2l7 4v6c0 5-3.5 9.74-7 10-3.5-.26-7-5-7-10V6z" />
               </svg>
             </div>
-            <h3 className="text-xl font-serif font-semibold mb-2">Calidad Garantizada</h3>
-            <p className="opacity-90">Cumplimos con los más altos estándares de calidad y seguridad médica.</p>
+            <h3 className="text-xl font-serif font-semibold mb-2">{textos[idioma].calidad}</h3>
+            <p className="opacity-90">{textos[idioma].calidadTexto}</p>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ const images = [
   '/images/dispositivo-verde.png',
 ]
 
-const HeroSection = () => {
+const HeroSection = ({ idioma }) => {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -15,30 +15,50 @@ const HeroSection = () => {
     return () => clearInterval(interval)
   }, [])
 
+  const textos = {
+    es: {
+      subtitulo: "Innovación Médica Argentina",
+      titulo: "Dispositivos Médicos de",
+      tituloSpan: "Precisión",
+      descripcion:
+        "Desarrollamos y fabricamos autoinyectores y pens de alta calidad para la industria farmacéutica, mejorando la salud y el bienestar de pacientes en toda Argentina y el mundo.",
+      botonVer: "Ver Productos",
+      botonContactar: "Contactar Ahora"
+      },
+    en: {
+      subtitulo: "Argentinian Medical Innovation",
+      titulo: "Precision",
+      tituloSpan: "Medical Devices",
+      descripcion:
+        "We develop and manufacture high-quality auto-injectors and pens for the pharmaceutical industry, improving the health and well-being of patients throughout Argentina and the world.",
+      botonVer: "View Products",
+      botonContactar: "Contact Now"
+    },
+  }
+
   return (
     <section id="hero" className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium">
-              Innovación Médica Argentina
+              {textos[idioma].subtitulo}
             </span>
             <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
-              Dispositivos Médicos de <span className="text-primary">Precisión</span>
+              {textos[idioma].titulo} <span className="text-primary">{textos[idioma].tituloSpan}</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Desarrollamos y fabricamos autoinyectores y pens de alta calidad para la industria farmacéutica,
-              mejorando la salud y el bienestar de pacientes en toda Argentina y el mundo.
+              {textos[idioma].descripcion}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center justify-center px-6 py-2  font-medium rounded bg-primary hover:bg-primary/90 text-white transition-colors">
-                Ver Productos
+                {textos[idioma].botonVer}
                 <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
               <button className="flex items-center justify-center px-6 py-2  font-medium rounded border border-primary text-primary bg-white hover:bg-primary/10 transition-colors">
-                Contactar Ahora
+                {textos[idioma].botonContactar}
               </button>
             </div>
           </div>

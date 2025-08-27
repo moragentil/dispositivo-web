@@ -20,7 +20,35 @@ export const contactoData = {
   ]
 }
 
-const Footer = () => {
+const Footer = ({idioma}) => {
+
+const textos = {
+  es: {
+    descripcion:"Desarrollamos dispositivos médicos innovadores que mejoran la calidad de vida de pacientes en Argentina y el mundo.",
+    contacto: "Contacto",
+    navegacion: "Navegación",
+    linkProd: "Productos",
+    linkNosotros: "Quiénes Somos",
+    linkContacto: "Contacto",
+    linkEquipo: "Sumate al Equipo",
+    ubicacion: "Ubicación",
+    desarrollo: "Desarrollado por",
+    derechos: "Todos los derechos reservados."
+  },
+  en: {
+    descripcion: "We develop innovative medical devices that improve the quality of life for patients in Argentina and around the world.",
+    contacto: "Contact",
+    navegacion: "Navigation",
+    linkProd: "Products",
+    linkNosotros: "About Us",
+    linkContacto: "Contact",
+    linkEquipo: "Join the Team",
+    ubicacion: "Location",
+    desarrollo: "Developed by",
+    derechos: "All rights reserved."
+  }
+}
+
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
@@ -31,13 +59,12 @@ const Footer = () => {
               <div className="text-sm uppercase tracking-wider">Medical Devices</div>
             </div>
             <p className="opacity-90 text-sm leading-relaxed">
-              Desarrollamos dispositivos médicos innovadores que mejoran la calidad de vida de pacientes en Argentina
-              y el mundo.
+              {textos[idioma].descripcion}
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Contacto</h4>
+            <h4 className="font-semibold mb-4">{textos[idioma].contacto}</h4>
             <div className="space-y-2 text-sm opacity-90">
               <div>Tel: {contactoData.telefono}</div>
               <div>Mobile: {contactoData.mobile}</div>
@@ -46,33 +73,33 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Navegación</h4>
+            <h4 className="font-semibold mb-4">{textos[idioma].navegacion}</h4>
             <div className="space-y-2 text-sm opacity-90">
               <div>
                 <a href="#productos" className="hover:text-accent transition-colors">
-                  Productos
+                  {textos[idioma].linkProd}
                 </a>
               </div>
               <div>
                 <a href="#nosotros" className="hover:text-accent transition-colors">
-                  Quiénes Somos
+                  {textos[idioma].linkNosotros}
                 </a>
               </div>
               <div>
                 <a href="#contacto" className="hover:text-accent transition-colors">
-                  Contacto
+                  {textos[idioma].linkContacto}
                 </a>
               </div>
               <div>
                 <a href="#equipo" className="hover:text-accent transition-colors">
-                  Sumate al Equipo
+                  {textos[idioma].linkEquipo}
                 </a>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Ubicación</h4>
+            <h4 className="font-semibold mb-4">{textos[idioma].ubicacion}</h4>
             <div className="rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.87952675156!2d-58.375828!3d-34.598601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacbb5d70bdb%3A0x9c01350f11eafdc2!2sAv.%20C%C3%B3rdoba%20632%2C%20C1054AAS%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1756134319806!5m2!1ses-419!2sus"
@@ -95,10 +122,10 @@ const Footer = () => {
               alt="Logo Resguar IT"
               className="h-5 w-5 inline-block mr-1"
             />
-            Desarrollado por <span className="font-messina">Resguar IT</span>
+            {textos[idioma].desarrollo} <span className="font-messina">Resguar IT</span>
           </p>
           </a>
-          <p>&copy; {new Date().getFullYear()} <span className='font-bionical'>dis+ </span> Medical Devices. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} <span className='font-bionical'>dis+ </span> Medical Devices. {textos[idioma].derechos}</p>
         </div>
       </div>
     </footer>

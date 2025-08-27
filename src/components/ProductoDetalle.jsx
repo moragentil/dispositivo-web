@@ -2,53 +2,84 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import {ArrowLeft} from 'lucide-react'
 
-const productos = {
-  'autoinyector-1ml': {
-    nombre: 'Autoinyector 1ml',
-    imagenes: [
-      { src: '/images/dispositivo-naranja.png', label: 'A', desc: 'SKC (Tapa Llave)' },
-      { src: '/images/dispositivo-naranja.png', label: 'B', desc: 'AR (Antirretroide)' },
-      { src: '/images/dispositivo-naranja.png', label: 'C', desc: 'DCW (Ventana Control)' }
-    ],
-    pasos: [
-      { texto: 'Abrir dispositivo y colocar jeringa.', img: '/images/paso1-naranja.jpg' },
-      { texto: 'Cargar el dispositivo y cerrar.', img: '/images/paso2-naranja.jpg' },
-      { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/paso3-naranja.jpg' },
-      { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/paso4-naranja.jpg' }
-    ],
-    folleto: '/archivos/Autoinyector-esp.pdf',
-    detalles: [
-      'Para monodosis con jeringas pre-llenadas de 1 ml listas para usar con la dosis exacta.',
-      'Fácil transporte.',
-      'Uso personal.',
-      'Tamaño ergonómico para aplicación manual, cómoda y precisa.',
-      'Polímeros de primera calidad altamente resistentes a caídas e impactos.',
-      'Manual de uso.'
-    ]
+const productosData = {
+  es: {
+    'autoinyector-1ml': {
+      nombre: 'Autoinyector 1ml',
+      pasos: [
+        { texto: 'Abrir dispositivo y colocar jeringa.', img: '/images/paso1-naranja.jpg' },
+        { texto: 'Cargar el dispositivo y cerrar.', img: '/images/paso2-naranja.jpg' },
+        { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/paso3-naranja.jpg' },
+        { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/paso4-naranja.jpg' }
+      ],
+      folleto: '/archivos/Autoinyector-esp.pdf',
+      detalles: [
+        'Para monodosis con jeringas pre-llenadas de 1 ml listas para usar con la dosis exacta.',
+        'Fácil transporte.',
+        'Uso personal.',
+        'Tamaño ergonómico para aplicación manual, cómoda y precisa.',
+        'Polímeros de primera calidad altamente resistentes a caídas e impactos.',
+        'Manual de uso.'
+      ]
+    },
+    'pen-1-5-3ml': {
+      nombre: 'Pen 1,5 / 3ml',
+      pasos: [
+        { texto: 'Abrir dispositivo y colocar ampolla.', img: '/images/paso1-verde.jpg' },
+        { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/paso2-verde.jpg' },
+        { texto: 'Regular la dosis, destapar la aguja y aplicar.' }
+      ],
+      folleto: '/archivos/Pen-esp.pdf',
+      detalles: [
+        'Pestaña antirrolido.',
+        'Sistema de reseteo de dosis.',
+        'Escala registro dosis.',
+        'Para múltiples dosis con carpoules listos para usar.',
+        'Fácil transporte. Uso personal.',
+        'Tamaño ergonómico para aplicación manual, cómoda y precisa.',
+        'Polímeros de primera calidad altamente resistentes a caídas e impactos.',
+        'Manual de uso.'
+      ]
+    }
   },
-  'pen-1-5-3ml': {
-    nombre: 'Pen 1,5 / 3ml',
-    imagenes: [
-      { src: '/images/dispositivo-verde.png', label: 'A', desc: 'Vista A' },
-      { src: '/images/dispositivo-verde.png', label: 'B', desc: 'Vista B' },
-      { src: '/images/dispositivo-verde.png', label: 'C', desc: 'Vista C' }
-    ],
-    pasos: [
-      { texto: 'Abrir dispositivo y colocar ampolla.', img: '/images/paso1-verde.jpg' },
-      { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/paso2-verde.jpg' },
-      { texto: 'Regular la dosis, destapar la aguja y aplicar.' }
-    ],
-    folleto: '/archivos/Pen-esp.pdf',
-    detalles: [
-      'Pestaña antirrolido.',
-      'Sistema de reseteo de dosis.',
-      'Escala registro dosis.',
-      'Para múltiples dosis con carpoules listos para usar.',
-      'Fácil transporte. Uso personal.',
-      'Tamaño ergonómico para aplicación manual, cómoda y precisa.',
-      'Polímeros de primera calidad altamente resistentes a caídas e impactos.',
-      'Manual de uso.'
-    ]
+  en: {
+    'autoinyector-1ml': {
+      nombre: 'Autoinjector 1ml',
+      pasos: [
+        { texto: 'Open device and place the syringe inside it.', img: '/images/paso1-naranja.jpg' },
+        { texto: 'Load the device and close it.', img: '/images/paso2-naranja.jpg' },
+        { texto: 'Remove the safety cap and place it on the other end to function as the trigger.', img: '/images/paso3-naranja.jpg' },
+        { texto: ' Remove the cap from the syringe and inject the medication.', img: '/images/paso4-naranja.jpg' }
+      ],
+      folleto: '/archivos/Autoinyector-esp.pdf', // Assuming same brochure for both languages
+      detalles: [
+        'For single doses with pre-filled 1 ml syringes ready to use with the exact dose.',
+        'Easy to transport.',
+        'Personal use.',
+        'Ergonomic size for convenient and accurate manual usage.',
+        'Top-quality polymers that are highly resistant to falls and impacts.',
+        'User\'s manual.'
+      ]
+    },
+    'pen-1-5-3ml': {
+      nombre: 'Pen 1.5 / 3ml',
+      pasos: [
+        { texto: 'Open device and place the carpoule inside it.', img: '/images/paso1-verde.jpg' },
+        { texto: 'Close the device and screw in the cap with the syringe.', img: '/images/paso2-verde.jpg' },
+        { texto: 'Remove the cap from the syringe and inject the medication.' }
+      ],
+      folleto: '/archivos/Pen-esp.pdf', // Assuming same brochure for both languages
+      detalles: [
+        'Antirolling tabs.',
+        'Multiple doses resetting system.',
+        'Doses register scale.',
+        'For multiple doses with pre-filled carpoule containing the medicine',
+        'Easy to transport. Personal use.',
+        'Ergonomic size for convenient and accurate manual usage.',
+        'Top-quality polymers that are highly resistant to falls and impacts.',
+        'User\'s manual.'
+      ]
+    }
   }
 }
 
@@ -65,15 +96,37 @@ const IconDownload = () => (
   </svg>
 )
 
-const ProductoDetalle = () => {
+const ProductoDetalle = ({idioma}) => {
+
+  const textos = {
+    es:{
+      volver: "Volver",
+      aplicacion: "Aplicación en",
+      pasos: "pasos",
+      caracteristicas: "Características",
+      descargar: "Descargar folleto",
+      noEncontrado: "Producto no encontrado",
+      noExiste: "El producto solicitado no existe."
+    },
+    en:{
+      volver: "Back",
+      aplicacion: "Application in",
+      pasos: "steps",
+      caracteristicas: "Features",
+      descargar: "Download brochure",
+      noEncontrado: "Product not found",
+      noExiste: "The requested product does not exist."
+    }
+  }
+
   const { productoId } = useParams()
-  const producto = productos[productoId]
+  const producto = productosData[idioma][productoId]
 
   if (!producto) {
     return (
       <div className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-        <p>El producto solicitado no existe.</p>
+        <h2 className="text-2xl font-bold mb-4">{textos[idioma].noEncontrado}</h2>
+        <p>{textos[idioma].noExiste}</p>
       </div>
     )
   }
@@ -81,11 +134,11 @@ const ProductoDetalle = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 ">
       <div className="mb-8">
-        <a href="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> Volver</a>
+        <a href="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> {textos[idioma].volver}</a>
       </div>
       {/* Header */}
       <div className="mb-4">
-        <h1 className="text-3xl font-bold text-primary mb-2">{producto.nombre}</h1>
+        <h1 className="text-3xl font-bold text-foreground mb-2">{producto.nombre}</h1>
       </div>
 
       {/* Main Product Views */}
@@ -110,7 +163,7 @@ const ProductoDetalle = () => {
         {/* Application Steps */}
         <div>
           <h2 className="text-xl font-bold text-primary mb-6">
-            Aplicación en {producto.pasos.length} pasos
+            {textos[idioma].aplicacion} {producto.pasos.length} {textos[idioma].pasos}
           </h2>
           <div className="space-y-6">
             {producto.pasos.map((paso, idx) => (
@@ -134,7 +187,7 @@ const ProductoDetalle = () => {
 
         {/* Features List */}
         <div>
-          <h2 className="text-xl font-bold text-primary mb-6">Características</h2>
+          <h2 className="text-xl font-bold text-primary mb-6">{textos[idioma].caracteristicas}</h2>
           <div className="space-y-4">
             {producto.detalles.map((detalle, idx) => (
               <div className="flex items-start gap-3" key={idx}>
@@ -155,7 +208,7 @@ const ProductoDetalle = () => {
           className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg flex items-center gap-2 font-medium"
         >
           <IconDownload />
-          Descargar folleto
+          {textos[idioma].descargar}
         </a>
       </div>
 

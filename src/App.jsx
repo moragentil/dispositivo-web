@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -12,22 +12,24 @@ import ProductoDetalle from './components/ProductoDetalle'
 import './App.css'
 
 function App() {
+  const [idioma, setIdioma] = useState('es') // 'es' o 'en'
+
   return (
     <Router>
       <div className="min-h-screen bg-background">
-        <Header />
+        <Header idioma={idioma} setIdioma={setIdioma} />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <HeroSection />
-                <ProductosSection />
-                <NosotrosSection />
-                <InfoSection />
-                <ContactoSection />
-                <EquipoSection />
-                <Footer />
+                <HeroSection idioma={idioma} />
+                <ProductosSection idioma={idioma} />
+                <NosotrosSection idioma={idioma} />
+                <InfoSection idioma={idioma} />
+                <ContactoSection idioma={idioma} />
+                <EquipoSection idioma={idioma} />
+                <Footer idioma={idioma} />
               </>
             }
           />
@@ -35,8 +37,8 @@ function App() {
             path="/producto/:productoId"
             element={
               <>
-                <ProductoDetalle />
-                <Footer />
+                <ProductoDetalle idioma={idioma} />
+                <Footer idioma={idioma} />
               </>
             }
           />

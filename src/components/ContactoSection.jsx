@@ -20,17 +20,59 @@ export const contactoData = {
   ]
 }
 
-const ContactoSection = () => {
+const ContactoSection = ({idioma}) => {
+
+const textos ={
+  es:{
+    titulo: "Contacto",
+    descripcion: "Estamos aquí para ayudarte con tus necesidades de dispositivos médicos",
+    infoTitulo: "Información de Contacto",
+    direccion: "Dirección",
+    telefono: "Teléfono",
+    contactosDirectos: "Contactos Directos",
+    formTitulo: "Envíanos un Mensaje",
+    formSubtitulo: "Completa el formulario y nos pondremos en contacto contigo",
+    nombre: "Nombre",
+    placeholderNombre: "Tu Nombre",
+    apellido: "Apellido",
+    placeholderApellido: "Tu Apellido",
+    email: "Email",
+    placeholderEmail: "tu@email.com",
+    mensaje: "Mensaje",
+    placeholderMensaje: "Escribe tu mensaje aquí",
+    botonEnviar: "Enviar Mensaje",
+  },
+  en:{
+    titulo: "Contact",
+    descripcion: "We are here to help you with your medical device needs",
+    infoTitulo: "Contact Information",
+    direccion: "Address",
+    telefono: "Phone",
+    contactosDirectos: "Direct Contacts",
+    formTitulo: "Send Us a Message",
+    formSubtitulo: "Fill out the form and we will get in touch with you",
+    placeholderNombre: "Your Name",
+    placeholderApellido: "Your Last Name",
+    placeholderEmail: "your@email.com",
+    placeholderMensaje: "Write your message here",
+    botonEnviar: "Send Message",
+    nombre: "Name",
+    apellido: "Last Name",
+    email: "Email",
+    mensaje: "Message"
+  }
+}
+
   return (
     <section id="contacto" className="py-12 scroll-mt-6">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">Contacto</h2>
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{textos[idioma].titulo}</h2>
           <p className="text-xl text-muted-foreground">
-            Estamos aquí para ayudarte con tus necesidades de dispositivos médicos
+            {textos[idioma].descripcion}
           </p>
         </div>
-        <h3 className="text-2xl font-serif font-semibold mb-6">Información de Contacto</h3>
+        <h3 className="text-2xl font-serif font-semibold mb-6">{textos[idioma].infoTitulo}</h3>
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -44,7 +86,7 @@ const ContactoSection = () => {
                       <circle cx="12" cy="11" r="2" />
                     </svg>
                     <div>
-                      <div className="font-semibold">Dirección</div>
+                      <div className="font-semibold">{textos[idioma].direccion}</div>
                       <div className="text-muted-foreground" style={{ whiteSpace: 'pre-line' }}>
                         {contactoData.direccion}
                       </div>
@@ -57,7 +99,7 @@ const ContactoSection = () => {
                       <path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13.81.37 1.6.72 2.34a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.74.35 1.53.59 2.34.72A2 2 0 0 1 21 16.91z" />
                     </svg>
                     <div>
-                      <div className="font-semibold">Teléfono</div>
+                      <div className="font-semibold">{textos[idioma].telefono}</div>
                       <div className="text-muted-foreground">{contactoData.telefono}</div>
                     </div>
                   </div>
@@ -88,7 +130,7 @@ const ContactoSection = () => {
                                 </div>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Contactos Directos</h4>
+                <h4 className="font-semibold mb-4">{textos[idioma].contactosDirectos}</h4>
                 <div className="space-y-3 text-sm">
                   {contactoData.directos.map((contact, idx) => (
                     <div key={idx}>
@@ -117,31 +159,31 @@ const ContactoSection = () => {
 
           <div className="bg-white rounded-lg shadow p-8">
             <div className="mb-6">
-              <div className="font-serif text-xl font-bold mb-2">Envíanos un Mensaje</div>
-              <div className="text-muted-foreground mb-4">Completa el formulario y nos pondremos en contacto contigo</div>
+              <div className="font-serif text-xl font-bold mb-2">{textos[idioma].formTitulo}</div>
+              <div className="text-muted-foreground mb-4">{textos[idioma].formDescripcion}</div>
             </div>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium">Nombre *</label>
-                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder="Tu nombre" />
+                  <label className="text-sm font-medium">{textos[idioma].nombre} *</label>
+                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].nombrePlaceholder} />
                 </div>
                 <div>
-                  <label className="text-sm font-medium">Apellido *</label>
-                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder="Tu apellido" />
+                  <label className="text-sm font-medium">{textos[idioma].apellido} *</label>
+                  <input className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].apellidoPlaceholder} />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium">Email *</label>
-                <input type="email" className="w-full border rounded px-3 py-2 mt-1" placeholder="tu@email.com" />
+                <label className="text-sm font-medium">{textos[idioma].email} *</label>
+                <input type="email" className="w-full border rounded px-3 py-2 mt-1" placeholder={textos[idioma].emailPlaceholder} />
               </div>
               <div>
-                <label className="text-sm font-medium">Mensaje *</label>
-                <textarea className="w-full border rounded px-3 py-2 mt-1" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                <label className="text-sm font-medium">{textos[idioma].mensaje} *</label>
+                <textarea className="w-full border rounded px-3 py-2 mt-1" rows="4" placeholder={textos[idioma].mensajePlaceholder}></textarea>
               </div>
               <div>
                 <button className="w-full bg-primary text-white rounded px-4 py-2 font-semibold hover:bg-primary-dark transition-colors">
-                  Enviar Mensaje
+                  {textos[idioma].botonEnviar}
                 </button>
               </div>
             </form>
