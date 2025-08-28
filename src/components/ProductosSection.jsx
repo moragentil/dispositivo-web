@@ -125,7 +125,7 @@ const ProductosSection = ({ idioma }) => {
         </div>
 
         {/* Swiper para mobile, Grid para desktop */}
-        <div className="max-w-5xl mx-6">
+        <div className="max-w-5xl md:w-full md:flex justify-start md:justify-center md:mx-auto mx-6">
           {/* En mobile (hidden md:grid) usamos Swiper */}
           <div className="md:hidden">
             <Swiper
@@ -138,12 +138,12 @@ const ProductosSection = ({ idioma }) => {
             >
               {productos.map((producto) => (
                 <SwiperSlide key={producto.id} className="h-auto">
-                  <div className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+                  <div className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full  overflow-hidden">
                     <div className="relative bg-muted flex items-center justify-center h-40">
                       {producto.comingSoon ? (
                         <Package className="h-20 w-20 text-muted-foreground" strokeWidth={1.5} />
                       ) : (
-                        <img src={producto.imgSrc} alt={producto.nombre} className="h-full w-auto object-contain" />
+                        <img src={producto.imgSrc} alt={producto.nombre} className="h-full w-full object-cover" />
                       )}
                       {producto.comingSoon && (
                         <div className="absolute top-2 right-2 bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded-full">
@@ -182,14 +182,14 @@ const ProductosSection = ({ idioma }) => {
           </div>
 
           {/* En desktop (hidden sm:grid) usamos la grilla original */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             {productos.map((producto) => (
-              <div key={producto.id} className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <div key={producto.id} className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col  overflow-hidden">
                 <div className="relative bg-muted flex items-center justify-center h-40">
                   {producto.comingSoon ? (
                     <Package className="h-20 w-20 text-muted-foreground" strokeWidth={1.5} />
                   ) : (
-                    <img src={producto.imgSrc} alt={producto.nombre} className="max-h-28 w-auto object-contain" />
+                    <img src={producto.imgSrc} alt={producto.nombre} className="h-full w-full object-cover" />
                   )}
                   {producto.comingSoon && (
                     <div className="absolute top-2 right-2 bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded-full">

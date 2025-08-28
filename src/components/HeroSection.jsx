@@ -22,7 +22,7 @@ const HeroSection = ({ idioma }) => {
       titulo: "Dispositivos Médicos de",
       tituloSpan: "Precisión",
       descripcion:
-        "Desarrollamos y fabricamos autoinyectores y pens de alta calidad. Nuestro diferencial es crear soluciones a medida, adaptando cada dispositivo a las necesidades específicas de la industria farmacéutica.",
+        "Fabricamos autoinyectores y pens de alta calidad, especializándonos en soluciones a medida para la industria farmacéutica.",
       botonVer: "Ver Productos",
       botonContactar: "Contactar Ahora"
       },
@@ -31,7 +31,7 @@ const HeroSection = ({ idioma }) => {
       titulo: "Precision",
       tituloSpan: "Medical Devices",
       descripcion:
-        "We develop and manufacture high-quality auto-injectors and pens. Our differential is creating custom solutions, adapting each device to the specific needs of the pharmaceutical industry.",
+        "We manufacture high-quality auto-injectors and pens, specializing in custom solutions for the pharmaceutical industry.",
       botonVer: "View Products",
       botonContactar: "Contact Now"
     },
