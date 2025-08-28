@@ -1,6 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Package } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const CheckIcon = () => (
   <svg className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
@@ -110,7 +115,7 @@ const ProductosSection = ({ idioma }) => {
   const productos = [productosData[idioma].producto1, productosData[idioma].producto2, productosData[idioma].producto3];
 
   return (
-    <section id="productos" className="py-16 bg-muted/40 scroll-mt-3">
+    <section id="productos" className="py-12 sm:py-16 bg-muted/40 scroll-mt-3">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 text-foreground">{textos[idioma].titulo}</h2>
@@ -119,47 +124,106 @@ const ProductosSection = ({ idioma }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-6 sm:mx-auto">
-          {productos.map((producto) => (
-            <div key={producto.id} className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-              <div className="relative bg-muted flex items-center justify-center h-40">
-                {producto.comingSoon ? (
-                  <Package className="h-20 w-20 text-muted-foreground" strokeWidth={1.5} />
-                ) : (
-                  <img src={producto.imgSrc} alt={producto.nombre} className="w-full h-auto object-contain" />
-                )}
-                {producto.comingSoon && (
-                  <div className="absolute top-2 right-2 bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded-full">
-                    {textos[idioma].proximamente}
+        {/* Swiper para mobile, Grid para desktop */}
+        <div className="max-w-5xl mx-6">
+          {/* En mobile (hidden md:grid) usamos Swiper */}
+          <div className="md:hidden">
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={16}
+              slidesPerView={1.2}
+              centeredSlides={true}
+              pagination={{ clickable: true }}
+              className="!pb-10" // Espacio para la paginación
+            >
+              {productos.map((producto) => (
+                <SwiperSlide key={producto.id} className="h-auto">
+                  <div className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+                    <div className="relative bg-muted flex items-center justify-center h-40">
+                      {producto.comingSoon ? (
+                        <Package className="h-20 w-20 text-muted-foreground" strokeWidth={1.5} />
+                      ) : (
+                        <img src={producto.imgSrc} alt={producto.nombre} className="h-full w-auto object-contain" />
+                      )}
+                      {producto.comingSoon && (
+                        <div className="absolute top-2 right-2 bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                          {textos[idioma].proximamente}
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-5 flex flex-col flex-grow">
+                      <h3 className="text-lg font-serif font-bold mb-2 text-foreground">{producto.nombre}</h3>
+                      <p className="text-muted-foreground text-sm mb-4 flex-grow">
+                        {producto.desc}
+                      </p>
+                      <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                        {producto.features.map((feature, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <CheckIcon />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-auto">
+                        <button
+                          className="w-full py-2 px-4 border border-primary transition-colors duration-300 font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed group-hover:bg-primary group-hover:text-primary-foreground enabled:hover:bg-primary enabled:hover:text-primary-foreground bg-transparent text-primary"
+                          type="button"
+                          onClick={() => handleDetalle(`/producto/${producto.id}`)}
+                          disabled={producto.comingSoon}
+                        >
+                          {textos[idioma].botonDetalle}
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                )}
-              </div>
-              <div className="p-5 flex flex-col flex-grow">
-                <h3 className="text-lg font-serif font-bold mb-2 text-foreground">{producto.nombre}</h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-grow">
-                  {producto.desc}
-                </p>
-                <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                  {producto.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckIcon />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto">
-                  <button
-                    className="w-full py-2 px-4 border border-primary  transition-colors duration-300 font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed group-hover:bg-primary group-hover:text-primary-foreground enabled:hover:bg-primary enabled:hover:text-primary-foreground bg-transparent text-primary"
-                    type="button"
-                    onClick={() => handleDetalle(`/producto/${producto.id}`)}
-                    disabled={producto.comingSoon}
-                  >
-                    {textos[idioma].botonDetalle}
-                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* En desktop (hidden sm:grid) usamos la grilla original */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productos.map((producto) => (
+              <div key={producto.id} className="group bg-background border border-border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div className="relative bg-muted flex items-center justify-center h-40">
+                  {producto.comingSoon ? (
+                    <Package className="h-20 w-20 text-muted-foreground" strokeWidth={1.5} />
+                  ) : (
+                    <img src={producto.imgSrc} alt={producto.nombre} className="max-h-28 w-auto object-contain" />
+                  )}
+                  {producto.comingSoon && (
+                    <div className="absolute top-2 right-2 bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded-full">
+                      {textos[idioma].proximamente}
+                    </div>
+                  )}
+                </div>
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="text-lg font-serif font-bold mb-2 text-foreground">{producto.nombre}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">
+                    {producto.desc}
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                    {producto.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckIcon />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <button
+                      className="w-full py-2 px-4 border border-primary  transition-colors duration-300 font-semibold text-sm disabled:opacity-50 disabled:cursor-not-allowed group-hover:bg-primary group-hover:text-primary-foreground enabled:hover:bg-primary enabled:hover:text-primary-foreground bg-transparent text-primary"
+                      type="button"
+                      onClick={() => handleDetalle(`/producto/${producto.id}`)}
+                      disabled={producto.comingSoon}
+                    >
+                      {textos[idioma].botonDetalle}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
