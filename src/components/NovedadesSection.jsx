@@ -80,7 +80,7 @@ const NovedadesSection = ({ idioma }) => {
   const guias = guiasData[idioma];
 
   return (
-    <section id="novedades" className="py-16 bg-background ">
+    <section id="novedades" className="py-16 bg-background scroll-mt-3">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4 text-foreground">{textos[idioma].titulo}</h2>
