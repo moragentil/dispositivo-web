@@ -1,17 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Package } from 'lucide-react'
+import { Package, CheckIcon } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const CheckIcon = () => (
-  <svg className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
+const baseURL = '/demos/dispositivo/'
 
 const productosData = {
   es: {
@@ -24,7 +20,7 @@ const productosData = {
         "Mecanismo de seguridad integrado",
         "Fácil uso para pacientes",
       ],
-      imgSrc: "/images/dispositivo-naranja.png"
+      imgSrc: `${baseURL}images/dispositivo-naranja.png`
     },
     producto2: {
       id: 'pen-1-5-3ml',
@@ -35,7 +31,7 @@ const productosData = {
         "Cartuchos intercambiables",
         "Diseño ergonómico y duradero",
       ],
-      imgSrc: "/images/dispositivo-verde.png"
+      imgSrc: `${baseURL}images/dispositivo-verde.png`
     },
     producto3: {
       id: 'pen-descartable',
@@ -46,7 +42,7 @@ const productosData = {
         "Diseño compacto y ligero",
         "Funcionalidades mejoradas",
       ],
-      imgSrc: "/images/dispositivo-verde.png",
+      imgSrc: `${baseURL}images/dispositivo-verde.png`,
       comingSoon: true
     }
   },
@@ -60,7 +56,7 @@ const productosData = {
         "Integrated safety mechanism",
         "Easy to use for patients",
       ],
-      imgSrc: "/images/dispositivo-naranja.png"
+      imgSrc: `${baseURL}images/dispositivo-naranja.png`
     },
     producto2: {
       id: 'pen-1-5-3ml',
@@ -71,7 +67,7 @@ const productosData = {
         "Interchangeable cartridges",
         "Ergonomic and durable design",
       ],
-      imgSrc: "/images/dispositivo-verde.png"
+      imgSrc: `${baseURL}images/dispositivo-verde.png`
     },
     producto3: {
       id: 'pen-descartable',
@@ -82,7 +78,7 @@ const productosData = {
         "Compact and lightweight design",
         "Enhanced features",
       ],
-      imgSrc: "/images/dispositivo-verde.png",
+      imgSrc: `${baseURL}images/dispositivo-verde.png`,
       comingSoon: true
     }
   }

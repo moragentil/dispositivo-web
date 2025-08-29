@@ -71,7 +71,7 @@ const textos ={
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl lg:text-4xl font-serif font-bold mb-4">{textos[idioma].titulo}</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">
+          <p className="text-base sm:text-xl text-muted-foreground">
             {textos[idioma].descripcion}
           </p>
         </div>

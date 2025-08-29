@@ -16,7 +16,7 @@ function App() {
   const [idioma, setIdioma] = useState('es') // 'es' o 'en'
 
   return (
-    <Router>
+    <Router basename={'/demos/dispositivo'}>
       <div className="min-h-screen bg-background">
         <Header idioma={idioma} setIdioma={setIdioma} />
         <Routes>

@@ -31,7 +31,7 @@ const Header = ({ idioma, setIdioma }) => {
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="/">
+          <a href="/demos/dispositivo">
             <div className="flex items-center space-x-2">
               <div className="text-2xl   font-bionical">dis+</div>
               <div className="text-sm font-sans uppercase tracking-wider">

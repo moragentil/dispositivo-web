@@ -1,18 +1,20 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import {ArrowLeft} from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
+
+const baseURL = '/demos/dispositivo'
 
 const productosData = {
   es: {
     'autoinyector-1ml': {
       nombre: 'Autoinyector 1ml',
       pasos: [
-        { texto: 'Abrir dispositivo y colocar jeringa.', img: '/images/paso1-naranja.jpg' },
-        { texto: 'Cargar el dispositivo y cerrar.', img: '/images/paso2-naranja.jpg' },
-        { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: '/images/paso3-naranja.jpg' },
-        { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: '/images/paso4-naranja.jpg' }
+        { texto: 'Abrir dispositivo y colocar jeringa.', img: `${baseURL}/images/paso1-naranja.jpg` },
+        { texto: 'Cargar el dispositivo y cerrar.', img: `${baseURL}/images/paso2-naranja.jpg` },
+        { texto: 'Retirar la tapa llave y colocarla en el otro extremo, como llave disparadora del dispositivo.', img: `${baseURL}/images/paso3-naranja.jpg` },
+        { texto: 'Retirar el capuchón de la jeringa, girar la llave y aplicar (inyectar) el medicamento.', img: `${baseURL}/images/paso4-naranja.jpg` }
       ],
-      folleto: '/archivos/Autoinyector-esp.pdf',
+      folleto: `${baseURL}/archivos/Autoinyector-esp.pdf`,
       detalles: [
         'Para monodosis con jeringas pre-llenadas de 1 ml listas para usar con la dosis exacta.',
         'Fácil transporte.',
@@ -25,11 +27,11 @@ const productosData = {
     'pen-1-5-3ml': {
       nombre: 'Pen 1,5 / 3ml',
       pasos: [
-        { texto: 'Abrir dispositivo y colocar ampolla.', img: '/images/paso1-verde.jpg' },
-        { texto: 'Cerrar y enroscar la tapa con la aguja.', img: '/images/paso2-verde.jpg' },
+        { texto: 'Abrir dispositivo y colocar ampolla.', img: `${baseURL}/images/paso1-verde.jpg` },
+        { texto: 'Cerrar y enroscar la tapa con la aguja.', img: `${baseURL}/images/paso2-verde.jpg` },
         { texto: 'Regular la dosis, destapar la aguja y aplicar.' }
       ],
-      folleto: '/archivos/Pen-esp.pdf',
+      folleto: `${baseURL}/archivos/Pen-esp.pdf`,
       detalles: [
         'Pestaña antirrolido.',
         'Sistema de reseteo de dosis.',
@@ -46,12 +48,12 @@ const productosData = {
     'autoinyector-1ml': {
       nombre: 'Autoinjector 1ml',
       pasos: [
-        { texto: 'Open device and place the syringe inside it.', img: '/images/paso1-naranja.jpg' },
-        { texto: 'Load the device and close it.', img: '/images/paso2-naranja.jpg' },
-        { texto: 'Remove the safety cap and place it on the other end to function as the trigger.', img: '/images/paso3-naranja.jpg' },
-        { texto: ' Remove the cap from the syringe and inject the medication.', img: '/images/paso4-naranja.jpg' }
+        { texto: 'Open device and place the syringe inside it.', img: `${baseURL}/images/paso1-naranja.jpg` },
+        { texto: 'Load the device and close it.', img: `${baseURL}/images/paso2-naranja.jpg` },
+        { texto: 'Remove the safety cap and place it on the other end to function as the trigger.', img: `${baseURL}/images/paso3-naranja.jpg` },
+        { texto: 'Remove the cap from the syringe and inject the medication.', img: `${baseURL}/images/paso4-naranja.jpg` }
       ],
-      folleto: '/archivos/Autoinyector-esp.pdf', // Assuming same brochure for both languages
+      folleto: `${baseURL}/archivos/Autoinyector-esp.pdf`, // Assuming same brochure for both languages
       detalles: [
         'For single doses with pre-filled 1 ml syringes ready to use with the exact dose.',
         'Easy to transport.',
@@ -64,11 +66,11 @@ const productosData = {
     'pen-1-5-3ml': {
       nombre: 'Pen 1.5 / 3ml',
       pasos: [
-        { texto: 'Open device and place the carpoule inside it.', img: '/images/paso1-verde.jpg' },
-        { texto: 'Close the device and screw in the cap with the syringe.', img: '/images/paso2-verde.jpg' },
+        { texto: 'Open device and place the carpoule inside it.', img: `${baseURL}/images/paso1-verde.jpg` },
+        { texto: 'Close the device and screw in the cap with the syringe.', img: `${baseURL}/images/paso2-verde.jpg` },
         { texto: 'Remove the cap from the syringe and inject the medication.' }
       ],
-      folleto: '/archivos/Pen-esp.pdf', // Assuming same brochure for both languages
+      folleto: `${baseURL}/archivos/Pen-esp.pdf`, // Assuming same brochure for both languages
       detalles: [
         'Antirolling tabs.',
         'Multiple doses resetting system.',
@@ -134,7 +136,9 @@ const ProductoDetalle = ({idioma}) => {
   return (
     <div className="max-w-6xl mx-auto p-6 ">
       <div className="mb-8">
-        <Link to="/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center"><ArrowLeft size={20} /> {textos[idioma].volver}</Link>
+        <a href="/demos/dispositivo/#productos" className="text-primary flex font-medium gap-2 hover:underline items-center">
+          <ArrowLeft size={20} /> {textos[idioma].volver}
+        </a>
       </div>
       {/* Header */}
       <div className="mb-4">
@@ -148,8 +152,8 @@ const ProductoDetalle = ({idioma}) => {
             <img
               src={
                 productoId === 'autoinyector-1ml'
-                  ? '/images/completo-naranja.png'
-                  : '/images/completo-verde.png'
+                  ? '/demos/dispositivo/images/completo-naranja.png'
+                  : '/demos/dispositivo/images/completo-verde.png'
               }
               alt={producto.nombre}
               className="max-h-full object-contain"

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { contactoData } from './ContactoSection'
 
+const baseURL = '/demos/dispositivo/'
+
 const images = [
-  '/images/dispositivo-naranja.png',
-  '/images/dispositivo-verde.png',
+  `${baseURL}images/dispositivo-naranja.png`,
+  `${baseURL}images/dispositivo-verde.png`,
 ]
 
 const HeroSection = ({ idioma }) => {
@@ -57,7 +59,7 @@ const HeroSection = ({ idioma }) => {
             <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
               {textos[idioma].subtitulo}
             </p>
-            <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-serif font-bold text-foreground leading-tight my-20 sm:my-0">
               {textos[idioma].titulo} <span className="text-primary">{textos[idioma].tituloSpan}</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
