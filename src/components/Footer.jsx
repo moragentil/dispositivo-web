@@ -138,7 +138,7 @@ const textos = {
               alt="Logo Resguar IT"
               className="h-5 w-5 inline-block mr-1"
             />
-            {textos[idioma].desarrollo} <span className="font-messina">Resguar IT</span>
+            {textos[idioma].desarrollo} <span className="font-messina" translate="no">Resguar IT</span>
           </p>
           </a>
           <p>&copy; {new Date().getFullYear()} <span className='font-bionical'>dis+ </span> Medical Devices. {textos[idioma].derechos}</p>
